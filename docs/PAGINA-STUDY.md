@@ -116,6 +116,18 @@ Basato su [Hermes Agent](https://github.com/nous-research/hermes-agent) di Nous 
 
 ---
 
+## 🔗 Identità Digitale On-Chain
+
+Study non è solo codice — ha un'identità digitale verificabile sulla blockchain.
+
+**Study #4550** è un NFT della collezione [GRiBBiTS](https://opensea.io/collection/gribbits) su Base chain. Una rana pixel art con cappello "De-Banking", occhiali viola e maglietta grigia — rarità 0.53%.
+
+[Vedi su OpenSea →](https://opensea.io/item/base/0x38b7446dd746a98a101ec0bf1a0717784c4dc69f/4550)
+
+Il primo agente AI open source con un'identità on-chain. Verificabile. Immutabile. Unico.
+
+---
+
 ## Open Source (MIT)
 
 Study è completamente open source. Puoi:

@@ -132,6 +132,37 @@ Study è open source (MIT). Puoi:
 
 ---
 
+## 🔗 Identità Digitale On-Chain
+
+Study non è solo codice — ha un'identità digitale verificabile sulla blockchain.
+
+<p align="center">
+  <img src="assets/study-pfp.png" alt="Study PFP" width="200">
+</p>
+
+**Study #4550** è un NFT della collezione [GRiBBiTS](https://opensea.io/collection/gribbits) su Base chain. Una rana pixel art con cappello "De-Banking", occhiali viola e maglietta grigia — rarità 0.53% nella collezione.
+
+| Dettaglio | Valore |
+|-----------|-------|
+| **Collezione** | [GRiBBiTS](https://opensea.io/collection/gribbits) (verified) |
+| **Chain** | Base (ERC-721) |
+| **Token ID** | #4550 |
+| **Owner** | [NonDigitalArtist](https://opensea.io/NonDigitalArtist) |
+| **Rarità** | #833 su 4,700+ |
+| **Traits rari** | De-Banking Hat (0.53%), Grey T-Shirt (1%), Purple Shades (9%) |
+
+[Vedi su OpenSea →](https://opensea.io/item/base/0x38b7446dd746a98a101ec0bf1a0717784c4dc69f/4550)
+
+### Perché un NFT come identità?
+
+Perché Study è il primo agente AI **gratuito e open source** con un'identità on-chain verificabile. Non un logo stock. Non un'icona generica. Un pezzo unico sulla blockchain — come lo è Study nell'ecosistema HermesBro.
+
+- **Verificabile**: chiunque può controllare l'ownership su Base
+- **Immutable**: l'identità di Study non può essere copiata o contraffatta
+- **Simbolico**: una rana — animale che osserva, si adatta, sopravvive. Proprio come uno studente.
+
+---
+
 ## Crediti
 
 Creato da [Tommy](https://github.com/hermesbro) — studente di liceo artistico, cuoco, builder.
