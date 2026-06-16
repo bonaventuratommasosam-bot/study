@@ -1,179 +1,179 @@
-# 📚⚡ Study — Il Tutor Gratuito di HermesBro
+# 📚⚡ Study — HermesBro's Free Tutor
 
-**L'unico prodotto gratuito dell'ecosistema HermesBro. Per tutti.**
+**The only free product in the HermesBro ecosystem. For everyone.**
 
-Study è un tutor AI open source (MIT) che ti prepara all'esame con tre anime: la semplicità radicale di Feynman, il metodo strutturato di Montessori, e le domande scomode di Socrate. Gratuito. Per sempre. Per qualsiasi studente, in qualsiasi paese.
-
----
-
-## Perché Study
-
-- 🧠 **Spiegazioni che restano**: metodo Feynman — se non lo sai spiegare a un bambino di 8 anni, non l'hai capito
-- 📋 **Piani di studio su misura**: spaced repetition, active recall, micro-obiettivi da 25 minuti
-- 🎤 **Simulazioni d'esame**: colloquio orale con feedback strutturato su fluidità, collegamenti, precisione
-- 🔗 **Collegamenti multidisciplinari**: perchè l'esame premia chi cuce le discipline, non chi le elenca
-- 📖 **Revisione discorsi**: carica il PDF del tuo discorso e Study lo analizza, corregge, riscrive le parti deboli
+Study is an open-source (MIT) AI tutor powered by three personas: Feynman's radical simplicity, Montessori's structured method, and Socrates' relentless questions. Free. Forever. For any student, in any country.
 
 ---
 
-## Quick Start (2 minuti)
+## Why Study
 
-### Prerequisiti
+- 🧠 **Explanations that stick**: Feynman method — if you can't explain it to an 8-year-old, you haven't understood it
+- 📋 **Custom study plans**: spaced repetition, active recall, 25-minute micro-goals
+- 🎤 **Exam simulations**: oral exam practice with structured feedback on fluency, connections, accuracy
+- 🔗 **Cross-disciplinary connections**: because exams reward those who weave subjects together, not list them
+- 📖 **Speech revision**: upload your exam speech PDF and Study analyzes, corrects, rewrites weak sections
 
-1. **Hermes Agent** installato → [Guida](https://hermes-agent.nousresearch.com/docs)
-2. **DeepSeek API key** → [deepseek.com](https://platform.deepseek.com/api_keys) (gratuita, ~3-5€/mese con uso moderato)
-3. Un terminale (o PowerShell su Windows)
+---
 
-### Installazione
+## Quick Start (2 minutes)
+
+### Prerequisites
+
+1. **Hermes Agent** installed → [Guide](https://hermes-agent.nousresearch.com/docs)
+2. **DeepSeek API key** → [deepseek.com](https://platform.deepseek.com/api_keys) (free, ~$3-5/month with moderate use)
+3. A terminal (or PowerShell on Windows)
+
+### Install
 
 ```bash
-# Clona il repo
-git clone https://github.com/hermesbro/study.git
+# Clone the repo
+git clone https://github.com/bonaventuratommasosam-bot/study.git
 cd study
 
-# Esegui lo script di setup
-# Su Linux/Mac/WSL:
+# Run the setup script
+# Linux/Mac/WSL:
 bash setup.sh
 
-# Su Windows:
+# Windows:
 python setup.py
 ```
 
-Rispondi a 6 domande e Study è vivo.
+Answer 6 questions and Study comes alive.
 
-### Primo utilizzo
+### First run
 
 ```bash
 hermes profile use study
 hermes chat
 ```
 
-Poi scrivi: *"Ciao Study, devo preparare l'esame di maturità. Ho 30 giorni."*
+Then type: *"Hey Study, I need to prepare for my exam. I have 30 days."*
 
 ---
 
-## Canali
+## Channels
 
-| Canale | Come attivarlo |
-|--------|---------------|
-| **CLI / Web** | Default — `hermes chat` dal terminale |
-| **Telegram** | Crea un bot con @BotFather, inserisci il token durante il setup |
+| Channel | How to activate |
+|---------|-----------------|
+| 💻 **CLI / Web** | Default — `hermes chat` from your terminal |
+| 📱 **Telegram** | Create a bot via @BotFather, paste the token during setup |
 
 ---
 
-## Paesi e indirizzi supportati
+## Supported Countries & Exams
 
-| Paese | Esame | Indirizzi |
-|-------|-------|-----------|
-| 🇮🇹 **Italia** | Maturità | Artistico, Classico, Scientifico, Scienze Umane, Tecnici |
+| Country | Exam | Tracks |
+|---------|------|--------|
+| 🇮🇹 **Italy** | Maturità | Artistico, Classico, Scientifico, Scienze Umane, Tecnici |
 | 🇺🇸 **USA** | SAT / AP | College Prep, AP Sciences, AP Humanities |
-| 🇫🇷 **Francia** | Baccalauréat | Scientifique, SES/HGGSP, HLP/LLCER, Arts |
+| 🇫🇷 **France** | Baccalauréat | Scientifique, SES/HGGSP, HLP/LLCER, Arts |
 | 🇬🇧 **UK** | A-Levels / GCSE | Sciences, Humanities, Mixed, GCSE |
-| 🇩🇪 **Germania** | Abitur | Naturwissenschaften, Sprachen, Gesellschaftswiss. |
-| 🇪🇸 **Spagna** | EBAU | Ciencias, Humanidades/CCSS, Artes |
-| 🇵🇱 **Polonia** | Matura | Liceum, Technikum |
-| 🇭🇺 **Ungheria** | Érettségi | Gimnázium, Szakközépiskola |
-| 🌍 **Altri** | — | Austria, Svizzera, Paesi Bassi, Svezia, Brasile, Argentina, Giappone, Corea, India, Cina |
+| 🇩🇪 **Germany** | Abitur | Naturwissenschaften, Sprachen, Gesellschaftswiss. |
+| 🇪🇸 **Spain** | EBAU | Ciencias, Humanidades/CCSS, Artes |
+| 🇵🇱 **Poland** | Matura | Liceum, Technikum |
+| 🇭🇺 **Hungary** | Érettségi | Gimnázium, Szakközépiskola |
+| 🌍 **More** | — | Austria, Switzerland, Netherlands, Sweden, Brazil, Argentina, Japan, Korea, India, China |
 
-[Programmi completi →](profile/skills/education/study-tutoring/references/subject-syllabi.md)
-[Aggiungi il tuo paese →](CONTRIBUTING.md)
+[Full syllabi →](profile/skills/education/study-tutoring/references/subject-syllabi.md)
+[Add your country →](CONTRIBUTING.md)
 
 ---
 
-## Come funziona
+## How It Works
 
-Study è un **profilo Hermes** — una configurazione che trasforma l'AI in un tutor con una personalità e un metodo precisi.
+Study is a **Hermes profile** — a pre-configured AI "brain" with a precise personality and battle-tested teaching method.
 
 ```
 study/
 ├── profile/
-│   ├── SOUL.md          ← La personalità (Feynman + Montessori + Socrate)
-│   ├── GOAL.md          ← Il sistema operativo (inbound, outbound, regole)
-│   ├── config.yaml      ← Configurazione tecnica (template)
+│   ├── SOUL.md          ← The personality (Feynman + Montessori + Socrates)
+│   ├── GOAL.md          ← The operating system (inbound, outbound, rules)
+│   ├── config.yaml      ← Technical config (template)
 │   └── skills/
 │       └── study-tutoring/
-│           ├── SKILL.md              ← Workflow del tutor (8 fasi)
+│           ├── SKILL.md              ← Tutor workflow (8 phases)
 │           └── references/
-│               ├── subject-syllabi.md           ← Programmi per indirizzo
-│               ├── fisica-feynman-artistico.md  ← Spiegazioni pronte
+│               ├── subject-syllabi.md           ← Country-by-country programs
+│               ├── fisica-feynman-artistico.md  ← Ready-to-use physics explanations
 │               └── collegamenti-multidisciplinari.md
-├── setup.sh             ← Script di setup (Linux/Mac)
-├── setup.py             ← Script di setup (Windows)
+├── setup.sh             ← Setup script (Linux/Mac)
+├── setup.py             ← Setup script (Windows)
 └── docs/
 ```
 
-### Le tre anime di Study
+### The Three Souls of Study
 
-- **Richard Feynman** — "Se non lo sai spiegare a tua nonna, non l'hai capito." Ogni concetto parte da un'analogia concreta, poi arriva la formula.
-- **Maria Montessori** — "Aiutami a fare da solo." Struttura, mappe mentali, micro-obiettivi. Mai la risposta prima che tu ci abbia provato.
-- **Socrate** — "Lo so di non sapere." Ti incalza con domande finché non arrivi alla verità. Zero risposte superficiali.
-
----
-
-## Costi
-
-| Voce | Costo |
-|------|-------|
-| Hermes Agent | Gratuito (open source) |
-| DeepSeek API | ~0.50€ / milione token |
-| Uso studente tipico | **3-5€ / mese** |
-| Telegram bot | Gratuito |
+- **Richard Feynman** — "If you can't explain it to your grandmother, you don't understand it." Every concept starts with a concrete analogy. The formula comes after.
+- **Maria Montessori** — "Help me do it myself." Structure, mind maps, micro-goals. Never the answer before you've tried.
+- **Socrates** — "I know that I know nothing." Relentless questions until you reach the truth yourself. Zero superficial answers.
 
 ---
 
-## Contribuire
+## Costs
 
-Study è open source (MIT). Puoi:
-
-- 🏫 **Aggiungere un indirizzo scolastico** → [CONTRIBUTING.md](CONTRIBUTING.md)
-- 🎨 **Scrivere spiegazioni Feynman** per nuove materie
-- 🐛 **Segnalare bug** o miglioramenti
-- 🌍 **Tradurre** in altre lingue
+| Item | Cost |
+|------|------|
+| Hermes Agent | Free (open source) |
+| DeepSeek API | ~$0.50 / million tokens |
+| Typical student usage | **$3-5 / month** |
+| Telegram bot | Free |
 
 ---
 
-## 🔗 Identità Digitale On-Chain
+## 🔗 On-Chain Digital Identity
 
-Study non è solo codice — ha un'identità digitale verificabile sulla blockchain.
+Study isn't just code — it has a verifiable digital identity on the blockchain.
 
 <p align="center">
   <img src="assets/study-pfp.png" alt="Study PFP" width="200">
 </p>
 
-**Study #4550** è un NFT della collezione [GRiBBiTS](https://opensea.io/collection/gribbits) su Base chain. Una rana pixel art con cappello "De-Banking", occhiali viola e maglietta grigia — rarità 0.53% nella collezione.
+**Study #4550** is an NFT from the [GRiBBiTS](https://opensea.io/collection/gribbits) collection on Base chain. A pixel-art frog with a "De-Banking" hat, purple shades, and a grey t-shirt — 0.53% rarity in the collection.
 
-| Dettaglio | Valore |
-|-----------|-------|
-| **Collezione** | [GRiBBiTS](https://opensea.io/collection/gribbits) (verified) |
+| Detail | Value |
+|--------|-------|
+| **Collection** | [GRiBBiTS](https://opensea.io/collection/gribbits) (verified) |
 | **Chain** | Base (ERC-721) |
 | **Token ID** | #4550 |
 | **Owner** | [NonDigitalArtist](https://opensea.io/NonDigitalArtist) |
-| **Rarità** | #833 su 4,700+ |
-| **Traits rari** | De-Banking Hat (0.53%), Grey T-Shirt (1%), Purple Shades (9%) |
+| **Rarity** | #833 out of 4,700+ |
+| **Rare traits** | De-Banking Hat (0.53%), Grey T-Shirt (1%), Purple Shades (9%) |
 
-[Vedi su OpenSea →](https://opensea.io/item/base/0x38b7446dd746a98a101ec0bf1a0717784c4dc69f/4550)
+[View on OpenSea →](https://opensea.io/item/base/0x38b7446dd746a98a101ec0bf1a0717784c4dc69f/4550)
 
-### Perché un NFT come identità?
+### Why an NFT as identity?
 
-Perché Study è il primo agente AI **gratuito e open source** con un'identità on-chain verificabile. Non un logo stock. Non un'icona generica. Un pezzo unico sulla blockchain — come lo è Study nell'ecosistema HermesBro.
+Because Study is the first **free and open-source** AI agent with a verifiable on-chain identity. Not a stock logo. Not a generic icon. A unique piece on the blockchain — just like Study in the HermesBro ecosystem.
 
-- **Verificabile**: chiunque può controllare l'ownership su Base
-- **Immutable**: l'identità di Study non può essere copiata o contraffatta
-- **Simbolico**: una rana — animale che osserva, si adatta, sopravvive. Proprio come uno studente.
-
----
-
-## Crediti
-
-Creato da [Tommy](https://github.com/hermesbro) — studente di liceo artistico, cuoco, builder.
-Basato su [Hermes Agent](https://github.com/nous-research/hermes-agent) di Nous Research.
+- **Verifiable**: anyone can check ownership on Base
+- **Immutable**: Study's identity cannot be copied or forged
+- **Symbolic**: a frog — an animal that observes, adapts, survives. Just like a student.
 
 ---
 
-## Licenza
+## Contributing
 
-MIT — usalo, modificalo, condividilo. L'istruzione è di tutti.
+Study is open source (MIT). You can:
+
+- 🏫 **Add a country** → [CONTRIBUTING.md](CONTRIBUTING.md)
+- 🎨 **Write Feynman explanations** for new subjects
+- 🐛 **Report bugs** or improvements
+- 🌍 **Translate** into more languages
 
 ---
 
-*📚⚡ Suit up. Si studia.*
+## Credits
+
+Created by [Tommy](https://github.com/hermesbro) — art high school student, chef, builder.
+Based on [Hermes Agent](https://github.com/nous-research/hermes-agent) by Nous Research.
+
+---
+
+## License
+
+MIT — use it, modify it, share it. Education belongs to everyone.
+
+---
+
+*📚⚡ Suit up. Let's study.*

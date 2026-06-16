@@ -1,100 +1,100 @@
-# Contribuire a Study
+# Contributing to Study
 
-Grazie! Study esiste per democratizzare il tutoring di qualità. Ecco come puoi aiutare.
+Thank you! Study exists to democratize quality tutoring. Here's how you can help.
 
 ---
 
-## Aggiungere un indirizzo scolastico
+## Adding a Country or School System
 
-Il 90% del lavoro è compilare il programma in `profile/skills/education/study-tutoring/references/subject-syllabi.md`.
+90% of the work is filling in the curriculum in `profile/skills/education/study-tutoring/references/subject-syllabi.md`.
 
 ### Template
 
 ```markdown
-## [Nome Indirizzo] — [Esame] [Anno]
+## [Country] — [Exam Name] [Year]
 
-**Materie orali:**
-- Materia 1 — commissario [interno/esterno]
-- Materia 2 — commissario [interno/esterno]
-- Materia 3 — commissario [interno/esterno]
-- Materia 4 — commissario [interno/esterno]
+**Exam subjects:**
+- Subject 1 — [internal/external] examiner
+- Subject 2 — [internal/external] examiner
+- Subject 3 — [internal/external] examiner
+- Subject 4 — [internal/external] examiner
 
-### Materia 1 — programma standard
-1. **Argomento**: dettagli chiave, autori, date
+### Subject 1 — standard curriculum
+1. **Topic**: key details, authors, dates
 2. ...
 
-### Materia 2 — programma standard
+### Subject 2 — standard curriculum
 ...
 ```
 
-### Passi
+### Steps
 
-1. Fai fork del repo
-2. Aggiungi il programma in `subject-syllabi.md`
-3. (Opzionale) Aggiungi spiegazioni Feynman in un nuovo file `references/fisica-feynman-[indirizzo].md`
-4. Aggiungi l'indirizzo alla tabella in `README.md`
-5. Apri una Pull Request
+1. Fork the repo
+2. Add the curriculum to `subject-syllabi.md`
+3. (Optional) Add Feynman-style explanations in a new file `references/feynman-[subject]-[country].md`
+4. Add the country to the table in `README.md`
+5. Open a Pull Request
 
 ---
 
-## Scrivere spiegazioni Feynman
+## Writing Feynman Explanations
 
-Ogni spiegazione Feynman segue questo formato:
+Every Feynman explanation follows this format:
 
 ```markdown
-### Nome del concetto
+### Concept Name
 
-| Mossa | Cosa dire |
-|-------|-----------|
-| 👶 Versione 8 anni | [Analogia concreta dalla vita quotidiana. Massimo 2 frasi.] |
-| 🎨 Collegamento alla materia | [Come si applica nella pratica / nella materia dello studente] |
-| 📐 Formula / Teoria | [La formula o definizione formale, solo DOPO l'intuizione] |
+| Move | What to say |
+|------|-------------|
+| 👶 8-year-old version | [Concrete analogy from everyday life. 2 sentences max.] |
+| 🎨 Connection to the subject | [How this applies in practice / in the student's field] |
+| 📐 Formula / Theory | [The formula or formal definition, only AFTER the intuition] |
 ```
 
-### Regole
+### Rules
 
-- Prima il senso fisico, poi la formula. Mai il contrario.
-- Usa oggetti quotidiani (pentole, palloncini, matite, acqua)
-- Collega sempre alla materia d'indirizzo dello studente
-- Una spiegazione = massimo 150 parole
+- Physical intuition first, formula second. Never the other way around.
+- Use everyday objects (pots, balloons, pencils, water)
+- Always connect to the student's field of study
+- One explanation = 150 words max
 
-Vedi `fisica-feynman-artistico.md` per esempi completi.
-
----
-
-## Modificare SOUL.md o GOAL.md
-
-SOUL e GOAL sono file template con variabili `{{LI_KE_THIS}}`. Lo script `setup.sh`/`setup.py` le sostituisce.
-
-Quando modifichi:
-- Usa `{{STUDENT_NAME}}` invece di nomi specifici
-- Usa `{{SCHOOL_TYPE}}` e `{{EXAM_NAME}}` per riferimenti alla scuola
-- Non rimuovere le variabili esistenti senza aggiornare anche lo script di setup
+See `fisica-feynman-artistico.md` for complete examples.
 
 ---
 
-## Standard del codice
+## Modifying SOUL.md or GOAL.md
 
-- **Python (setup.py)**: compatibile Python 3.8+, zero dipendenze esterne
-- **Bash (setup.sh)**: POSIX-compatibile, testato su bash e zsh
-- **Markdown**: tutti i file .md usano tabelle quando possibile, emoji per priorità
+SOUL and GOAL are template files with `{{LI_KE_THIS}}` variables. The `setup.sh`/`setup.py` scripts replace them.
 
----
-
-## Segnalare bug
-
-Apri una issue su GitHub con:
-- Sistema operativo
-- Versione Hermes Agent (`hermes --version`)
-- Messaggio di errore completo
-- Cosa stavi facendo
+When editing:
+- Use `{{STUDENT_NAME}}` instead of specific names
+- Use `{{SCHOOL_TYPE}}` and `{{EXAM_NAME}}` for school references
+- Don't remove existing variables without updating the setup scripts too
 
 ---
 
-## Domande?
+## Code Standards
 
-Apri una Discussion su GitHub o scrivi a [hermesbro.cloud](https://hermesbro.cloud).
+- **Python (setup.py)**: Python 3.8+ compatible, zero external dependencies
+- **Bash (setup.sh)**: POSIX-compatible, tested on bash and zsh
+- **Markdown**: all .md files use tables where possible, emoji for priority
 
 ---
 
-*📚⚡ Ogni contributo è un esame in meno senza tutor.*
+## Reporting Bugs
+
+Open a GitHub issue with:
+- Operating system
+- Hermes Agent version (`hermes --version`)
+- Full error message
+- What you were doing
+
+---
+
+## Questions?
+
+Open a GitHub Discussion or reach out at [hermesbro.cloud](https://hermesbro.cloud).
+
+---
+
+*📚⚡ Every contribution is one less exam without a tutor.*

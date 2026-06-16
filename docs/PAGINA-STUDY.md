@@ -1,164 +1,164 @@
-# Pagina /study — hermesbro.cloud
+# /study Page — hermesbro.cloud
 
-> **Contenuto per la landing page.** Da integrare nel sito HermesBro.
+> **Content for the landing page.** To be integrated into the HermesBro website.
 
 ---
 
 ## Hero
 
-**📚⚡ Study — Il Tutor Gratuito di HermesBro**
+**📚⚡ Study — HermesBro's Free AI Tutor**
 
-L'unico prodotto open source dell'ecosistema HermesBro. Feynman + Montessori + Socrate in un assistente AI che ti prepara all'esame. Gratuito. Per sempre. Per qualsiasi studente, in qualsiasi paese.
+The only open-source product in the HermesBro ecosystem. Feynman + Montessori + Socrates in one AI assistant that preps you for any exam. Free. Forever. For any student, in any country.
 
-[Scarica Study](#download) [Guarda la demo →](#demo)
-
----
-
-## Come funziona
-
-Study è un profilo Hermes — un "cervello" AI preconfigurato con una personalità precisa e un metodo didattico collaudato.
-
-1. **Scarica Study** — è open source, gratuito
-2. **Esegui lo script di setup** — 6 domande e sei pronto
-3. **Studia** — via chat (terminale) o Telegram
-
-Zero pubblicità. Zero costi nascosti. Solo studio.
+[Download Study](#download) [Watch demo →](#demo)
 
 ---
 
-## Le tre anime di Study
+## How It Works
+
+Study is a Hermes profile — a pre-configured AI "brain" with a precise personality and proven teaching method.
+
+1. **Download Study** — it's open source, free forever
+2. **Run the setup script** — 6 questions and you're ready
+3. **Start studying** — via chat (terminal) or Telegram
+
+Zero ads. Zero hidden costs. Just studying.
+
+---
+
+## The Three Souls of Study
 
 |  |  |  |
 |---|---|---|
-| 🧠 **Feynman** | "Se non lo sai spiegare a tua nonna, non l'hai capito" | Ogni concetto parte da un'analogia concreta. La formula arriva dopo. |
-| 📋 **Montessori** | "Aiutami a fare da solo" | Struttura, mappe, micro-obiettivi. Mai la risposta prima che tu ci abbia provato. |
-| ❓ **Socrate** | "Lo so di non sapere" | Ti incalza con domande finché non arrivi alla verità da solo. |
+| 🧠 **Feynman** | "If you can't explain it to your grandmother, you don't understand it" | Every concept starts with a concrete analogy. The formula comes after. |
+| 📋 **Montessori** | "Help me do it myself" | Structure, mind maps, micro-goals. Never the answer before you've tried. |
+| ❓ **Socrates** | "I know that I know nothing" | Relentless questions until you reach the truth yourself. |
 
 ---
 
-## Cosa fa Study
+## What Study Does
 
-- 📖 **Spiega** — qualsiasi argomento, dal teorema di Pitagora a Nietzsche, con analogie quotidiane
-- 🎤 **Interroga** — simulazioni d'esame con feedback su fluidità, precisione, collegamenti
-- 📅 **Pianifica** — piani di studio personalizzati con spaced repetition e micro-obiettivi
-- 🔗 **Collega** — percorsi multidisciplinari tra materie che sembrano distanti
-- 📝 **Revisiona** — carica il PDF del tuo discorso e Study lo analizza, corregge, riscrive
+- 📖 **Explains** — any topic, from the Pythagorean theorem to Nietzsche, with everyday analogies
+- 🎤 **Quizzes** — exam simulations with feedback on fluency, precision, connections
+- 📅 **Plans** — personalized study plans with spaced repetition and micro-goals
+- 🔗 **Connects** — cross-disciplinary paths between seemingly distant subjects
+- 📝 **Reviews** — upload your speech PDF and Study analyzes, corrects, rewrites weak sections
 
 ---
 
-## Download e installazione (2 minuti)
+## Download & Install (2 minutes)
 
-### Prerequisiti
+### Prerequisites
 
-1. **Hermes Agent** — [Scarica gratis](https://hermes-agent.nousresearch.com/docs)
-2. **DeepSeek API key** — [Registrati gratis](https://platform.deepseek.com/api_keys) (~3-5€/mese di token)
+1. **Hermes Agent** — [Download free](https://hermes-agent.nousresearch.com/docs)
+2. **DeepSeek API key** — [Sign up free](https://platform.deepseek.com/api_keys) (~$3-5/month in tokens)
 
-### Installazione
+### Install
 
 ```bash
-# Scarica Study
+# Download Study
 git clone https://github.com/bonaventuratommasosam-bot/study.git
 cd study
 
-# Su Linux/Mac:
+# Linux/Mac:
 bash setup.sh
 
-# Su Windows:
+# Windows:
 python setup.py
 ```
 
-Rispondi alle domande (nome, paese, scuola, canale) — Study si configura da solo.
+Answer the questions (name, country, school, channel) — Study configures itself.
 
 ```bash
-# Avvia Study
+# Launch Study
 hermes profile use study
 hermes chat
 ```
 
-Poi scrivi: *"Ciao Study, devo preparare l'esame. Ho 30 giorni."*
+Then type: *"Hey Study, I need to prepare for my exam. I have 30 days."*
 
 ---
 
-## Canali
+## Channels
 
-| Canale | Come funziona |
-|--------|---------------|
-| 💻 **Terminale / Web** | `hermes chat` dal tuo computer. Semplice, privato. |
-| 📱 **Telegram** | Crea un bot con @BotFather, inserisci il token nel setup. Study ti manda anche i reminder. |
-
----
-
-## Paesi supportati
-
-Study copre i programmi scolastici di **9+ paesi** con syllabi dettagliati:
-
-🇮🇹 Italia (Maturità) · 🇺🇸 USA (SAT/AP) · 🇫🇷 Francia (Bac) · 🇬🇧 UK (A-Levels) · 🇩🇪 Germania (Abitur) · 🇪🇸 Spagna (EBAU) · 🇵🇱 Polonia (Matura) · 🇭🇺 Ungheria (Érettségi) · 🌍 e altri in arrivo
-
-[Vedi tutti i programmi →](https://github.com/bonaventuratommasosam-bot/study/blob/main/profile/skills/education/study-tutoring/references/subject-syllabi.md)
+| Channel | How it works |
+|---------|--------------|
+| 💻 **Terminal / Web** | `hermes chat` from your computer. Simple. Private. |
+| 📱 **Telegram** | Create a bot via @BotFather, paste the token during setup. Study also sends reminders. |
 
 ---
 
-## Perché gratuito?
+## Supported Countries
 
-Study è **l'unico prodotto gratuito di HermesBro**. 
+Study covers school curricula from **9+ countries** with detailed syllabi:
 
-Perché? Perché l'istruzione è un diritto. Tommy l'ha costruito per sé stesso mentre preparava la maturità — ora è di tutti.
+🇮🇹 Italy (Maturità) · 🇺🇸 USA (SAT/AP) · 🇫🇷 France (Bac) · 🇬🇧 UK (A-Levels) · 🇩🇪 Germany (Abitur) · 🇪🇸 Spain (EBAU) · 🇵🇱 Poland (Matura) · 🇭🇺 Hungary (Érettségi) · 🌍 and more coming
 
-Gli altri prodotti HermesBro (contabilità AI, trading bot, marketing automation) sono servizi professionali a pagamento. Study è il nostro contributo open source alla comunità.
-
----
-
-## Chi l'ha creato
-
-Study è stato creato da **Tommy** — studente di liceo artistico, cuoco, e founder di HermesBro. Preparandosi per l'esame di maturità, ha costruito il tutor che avrebbe voluto avere. Poi l'ha reso open source.
-
-Basato su [Hermes Agent](https://github.com/nous-research/hermes-agent) di Nous Research.
+[View all programs →](https://github.com/bonaventuratommasosam-bot/study/blob/main/profile/skills/education/study-tutoring/references/subject-syllabi.md)
 
 ---
 
-## 🔗 Identità Digitale On-Chain
+## Why Free?
 
-Study non è solo codice — ha un'identità digitale verificabile sulla blockchain.
+Study is **the only free product from HermesBro**. 
 
-**Study #4550** è un NFT della collezione [GRiBBiTS](https://opensea.io/collection/gribbits) su Base chain. Una rana pixel art con cappello "De-Banking", occhiali viola e maglietta grigia — rarità 0.53%.
+Why? Because education is a right. Tommy built it for himself while preparing for his final exams — now it belongs to everyone.
 
-[Vedi su OpenSea →](https://opensea.io/item/base/0x38b7446dd746a98a101ec0bf1a0717784c4dc69f/4550)
+Other HermesBro products (AI accounting, trading bots, marketing automation) are paid professional services. Study is our open-source contribution to the community.
 
-Il primo agente AI open source con un'identità on-chain. Verificabile. Immutabile. Unico.
+---
+
+## Who Built It
+
+Study was created by **Tommy** — art high school student, chef, and founder of HermesBro. While preparing for his final exams, he built the tutor he wished he had. Then he open-sourced it.
+
+Built on [Hermes Agent](https://github.com/nous-research/hermes-agent) by Nous Research.
+
+---
+
+## 🔗 On-Chain Digital Identity
+
+Study isn't just code — it has a verifiable digital identity on the blockchain.
+
+**Study #4550** is an NFT from the [GRiBBiTS](https://opensea.io/collection/gribbits) collection on Base chain. A pixel-art frog with a "De-Banking" hat, purple shades, and a grey t-shirt — 0.53% rarity.
+
+[View on OpenSea →](https://opensea.io/item/base/0x38b7446dd746a98a101ec0bf1a0717784c4dc69f/4550)
+
+The first open-source AI agent with an on-chain identity. Verifiable. Immutable. Unique.
 
 ---
 
 ## Open Source (MIT)
 
-Study è completamente open source. Puoi:
+Study is completely open source. You can:
 
-- Usarlo gratis, per sempre
-- Modificarlo per adattarlo al tuo paese
-- Contribuire con nuovi programmi scolastici
-- Installarlo sul tuo server
+- Use it free, forever
+- Modify it for your country
+- Contribute new school programs
+- Run it on your own server
 
 [GitHub →](https://github.com/bonaventuratommasosam-bot/study)
-[Come contribuire →](https://github.com/bonaventuratommasosam-bot/study/blob/main/CONTRIBUTING.md)
+[How to contribute →](https://github.com/bonaventuratommasosam-bot/study/blob/main/CONTRIBUTING.md)
 
 ---
 
 ## FAQ
 
-**Quanto costa?**
-Zero. Study è gratuito. Paghi solo i token LLM (DeepSeek: ~3-5€/mese con uso intensivo).
+**How much does it cost?**
+Zero. Study is free. You only pay for LLM tokens (DeepSeek: ~$3-5/month with heavy use).
 
-**Devo saper programmare?**
-No. Lo script di setup fa tutto da solo. Se sai usare il terminale, sai installare Study.
+**Do I need to know how to code?**
+No. The setup script does everything. If you can use a terminal, you can install Study.
 
-**Posso usarlo per qualsiasi esame?**
-Sì. Study si adatta al programma del tuo paese e della tua scuola. Se manca, puoi aggiungerlo.
+**Can I use it for any exam?**
+Yes. Study adapts to your country's and school's curriculum. If yours is missing, you can add it.
 
-**Funziona su Windows?**
-Sì. C'è uno script Python apposta (`python setup.py`).
+**Does it work on Windows?**
+Yes. There's a dedicated Python script (`python setup.py`).
 
-**È sicuro?**
-Sì. Study gira sul tuo computer, non su server esterni. La tua API key resta privata.
+**Is it safe?**
+Yes. Study runs on your computer, not on external servers. Your API key stays private.
 
 ---
 
-*📚⚡ Study — perché la risposta che trovi da solo è l'unica che non dimenticherai.*
+*📚⚡ Study — because the answer you find yourself is the only one you'll never forget.*
