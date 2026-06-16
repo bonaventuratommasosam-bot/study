@@ -145,3 +145,211 @@
 
 **Materie orali comuni:** Italiano (E), Storia (E), Materia d'indirizzo (I)
 [Da espandere per ciascun indirizzo: Amministrazione Finanza e Marketing, Turismo, Informatica, Geometri, etc.]
+
+---
+
+# Sistemi Scolastici Internazionali
+
+---
+
+## 🇺🇸 USA — High School Diploma / SAT / AP
+
+**Ultimo anno (12th Grade / Senior Year)**
+
+### Materie comuni
+- **English Language Arts**: literary analysis, rhetorical analysis, argumentative writing, research papers. Key texts: The Great Gatsby, Hamlet, 1984, Beloved, The Things They Carried
+- **Mathematics**: Pre-Calculus / Calculus (AP Calc AB/BC — limits, derivatives, integrals, applications), Statistics (AP Stats — probability, inference, regression)
+- **Science**: Biology (AP Bio — cellular processes, genetics, evolution), Chemistry (AP Chem — stoichiometry, equilibrium, thermodynamics), Physics (AP Physics 1/2 — mechanics, E&M, waves)
+- **Social Studies**: US History (APUSH — colonial era to present, key docs: Constitution, Federalist Papers, Gettysburg Address, Letter from Birmingham Jail), US Government (AP Gov — branches, civil rights, federalism), World History
+- **Foreign Language**: Spanish / French / etc. (AP — conversation, composition, literature)
+
+### Exam structure
+- **SAT**: Evidence-Based Reading & Writing (800) + Math (800) = 1600 total
+- **AP Exams**: scored 1-5, college credit at 3+. Each subject has its own exam (MCQ + FRQ)
+- **ACT** (alternative): English, Math, Reading, Science + optional Writing
+
+### College application
+- Common App essay (personal statement, 650 words)
+- Supplemental essays per university
+- Extracurriculars, GPA (weighted/unweighted), letters of recommendation
+
+---
+
+## 🇫🇷 France — Baccalauréat Général
+
+**Terminale (dernière année)**
+
+### Tronc commun (toutes séries)
+1. **Philosophie**: le sujet, la conscience, l'inconscient, autrui, le désir, la liberté, le devoir, le bonheur, l'État, la justice, la vérité, le langage, l'art, le travail, la technique, la religion, l'histoire — exercices: dissertation, explication de texte
+2. **Histoire-Géographie**: histoire — guerres mondiales, régimes totalitaires, France de Vichy, Résistance, décolonisation, guerre froide, construction européenne. Géographie — mondialisation, territoires, puissance (USA, Chine, UE)
+3. **Enseignement Scientifique**: sciences et société, climat, énergie, numérique, santé — tronc commun obligatoire
+4. **Langues Vivantes**: LVA (anglais) + LVB (espagnol/allemand/italien) — compréhension, expression écrite et orale
+
+### Spécialités (3 en Première → 2 en Terminale)
+- **Mathématiques**: algèbre, analyse (suites, fonctions, exponentielles, logarithmes), probabilités, géométrie dans l'espace, algorithmique
+- **Physique-Chimie**: ondes et signaux, mouvements et interactions, énergie, organisation de la matière
+- **SVT (Sciences de la Vie et de la Terre)**: génétique, évolution, écosystèmes, corps humain, climat
+- **SES (Sciences Économiques et Sociales)**: marchés, monnaie, croissance, inégalités, mondialisation, sociologie
+- **HGGSP (Histoire-Géo, Géopolitique, Sciences Politiques)**: puissances internationales, frontières, guerres et paix, enjeux de connaissance, environnement
+- **HLP (Humanités, Littérature et Philosophie)**: les pouvoirs de la parole, les représentations du monde, la recherche de soi
+- **LLCER (Langues, Littératures et Cultures Étrangères)**: littérature, cinéma, civilisation anglophone/hispanophone/etc.
+- **Arts**: arts plastiques, musique, théâtre, cinéma-audiovisuel
+
+### Épreuves
+- **Grand Oral**: 20 minutes sur un projet lié aux spécialités (coefficient 10)
+- **Épreuves de spécialité**: écrit + oral (coefficient 16 chacune)
+- **Philosophie**: écrit 4h (coefficient 8)
+- Contrôle continu: 40% de la note finale
+
+---
+
+## 🇬🇧 UK — A-Levels (Year 13)
+
+**Last two years: AS (Year 12) + A2 (Year 13)**
+
+### Structure
+- Students typically take 3-4 subjects
+- Graded A* to E, UCAS tariff points for university
+- Exam boards: AQA, Edexcel, OCR, WJEC (vary by school)
+
+### Popular A-Level subjects
+
+**English Literature**
+- Shakespeare (Hamlet, King Lear, Othello)
+- Poetry: pre-1900 (Keats, Blake, Tennyson, Rossetti) + post-1900 (Duffy, Heaney, Plath)
+- Prose: The Great Gatsby + pre-1900 text; dystopian fiction (1984, Handmaid's Tale)
+- Drama: modern (A Streetcar Named Desire, Death of a Salesman)
+- Unseen analysis + comparative essay
+
+**Mathematics**
+- Pure: proof, algebra, functions, coordinate geometry, sequences, trigonometry, exponentials/logs, differentiation, integration, numerical methods
+- Statistics: sampling, probability, distributions (binomial, normal), hypothesis testing
+- Mechanics: kinematics, forces, Newton's laws, moments
+- Further Maths (optional): complex numbers, matrices, further calculus, hyperbolic functions
+
+**Biology**
+- Biological molecules, cells, organism exchange, genetic info, energy transfers, organism response, populations, evolution, ecosystems, gene expression
+
+**Chemistry**
+- Atomic structure, bonding, energetics, kinetics, equilibria, redox, organic chemistry (alkanes → aromatics → polymers → biochemistry), spectroscopy
+
+**Physics**
+- Measurements, particles, waves, mechanics, electricity, thermal physics, fields, nuclear physics, astrophysics (optional), medical physics (optional)
+
+**History**
+- Breadth study (e.g. Tudors 1485-1603, Russia 1855-1964)
+- Depth study (e.g. French Revolution, American Civil Rights)
+- Historical investigation (coursework — 3000-4000 words)
+
+---
+
+## 🇵🇱 Poland — Matura (Egzamin Maturalny)
+
+**Ultimo anno liceum/technikum**
+
+### Obowiązkowe (compulsory — written, basic level)
+1. **Język polski**: analiza tekstów literackich, rozprawka, czytanie ze zrozumieniem. Epoki: antyk, średniowiecze, renesans, barok, oświecenie, romantyzm (Mickiewicz — Dziady, Pan Tadeusz), pozytywizm, Młoda Polska, dwudziestolecie międzywojenne, literatura wojenna i współczesna, poezja (Szymborska, Herbert, Miłosz)
+2. **Matematyka**: liczby rzeczywiste, funkcje (liniowa, kwadratowa, wielomianowa, wymierna, wykładnicza, logarytmiczna, trygonometryczna), ciągi, geometria analityczna, planimetria, stereometria, kombinatoryka, rachunek prawdopodobieństwa, statystyka
+3. **Język obcy nowożytny** (angielski): rozumienie tekstu, gramatyka, wypracowanie
+
+### Obowiązkowe — ustne
+- Język polski (rozmowa o tekście literackim/ikonicznym)
+- Język obcy (rozmowa na podstawie materiału)
+
+### Dodatkowe (extended level — at least 1 required)
+- Matematyka, język polski, język obcy, biologia, chemia, fizyka, geografia, historia, WOS (wiedza o społeczeństwie), informatyka, historia sztuki, historia muzyki
+
+---
+
+## 🇭🇺 Hungary — Érettségi
+
+**Ultimo anno gimnázium / szakközépiskola**
+
+### Kötelező (compulsory)
+1. **Magyar nyelv és irodalom**: szövegértés, műelemzés (vers/novella/regényrészlet), összehasonlító elemzés. Szerzők: Petőfi, Arany, Ady, Babits, Kosztolányi, József Attila, Radnóti, Örkény, Márai
+   - Irodalomtörténet: ókor, reneszánsz, barokk, felvilágosodás, romantika, realizmus, Nyugat, avantgárd, modern
+   - Nyelvtan: kommunikáció, retorika, stílus, nyelvtörténet
+2. **Matematika**: halmazok, logika, kombinatorika, algebra, függvények, sorozatok, trigonometria, koordinátageometria, valószínűségszámítás, statisztika
+3. **Történelem**: ókor (görög-római), középkor, kora újkor, Magyarország a Habsburg Birodalomban, reformkor és 1848-49, dualizmus, I. és II. világháború, kommunizmus, rendszerváltás, Európai Unió
+4. **Angol nyelv** (or other foreign language): olvasás, hallás, írás, szóbeli
+5. **Választható tárgy** (at least 1, advanced level): biológia, kémia, fizika, földrajz, informatika, művészettörténet, további nyelv
+
+### Exam structure
+- Középszint (standard) or Emeltszint (advanced)
+- Advanced level required for university admission in that subject
+- Oral + written components for most subjects
+
+---
+
+## 🇩🇪 Germany — Abitur
+
+**Letztes Jahr Gymnasium (Qualifikationsphase Q3/Q4)**
+
+### Structure
+- 4-5 Abiturfächer (exam subjects): 2-3 Leistungskurse (advanced), 2 Grundkurse (basic)
+- Must cover: languages, sciences, social sciences
+- Graded 0-15 points (Abitur note = total points / 60 × 5/3)
+
+### Core subjects by profile
+
+**Languages**
+- **Deutsch**: Literatur (Aufklärung, Sturm und Drang, Klassik, Romantik, Realismus, Moderne, Nachkriegsliteratur — Goethe, Schiller, Kafka, Brecht, Dürrenmatt, Grass), Sachtexte, Erörterung, Gedichtanalyse, Dramenanalyse
+- **Englisch**: literature, Shakespeare, contemporary novels, film analysis, mediation, political speeches, global issues
+- **Französisch / Latein**: literature, translation, cultural studies
+
+**Sciences**
+- **Mathematik**: Analysis (Funktionen, Ableitungen, Integrale, e-Funktion, ln), Analytische Geometrie (Vektoren, Ebenen, Abstände, Winkel), Stochastik (Wahrscheinlichkeit, Binomialverteilung, Normalverteilung, Hypothesentests)
+- **Physik**: Mechanik (Bewegungen, Kräfte, Schwingungen, Wellen), Elektrodynamik (Felder, Induktion, Kondensator, Spule), Quantenphysik (Photon, Photoeffekt, Materiewellen, Unschärfe), Atom- und Kernphysik, Relativitätstheorie (cenni)
+- **Chemie**: organische Chemie, Säure-Base, Redox, Energetik, Kinetik, Kunststoffe
+- **Biologie**: Genetik, Evolution, Ökologie, Neurobiologie, Stoffwechsel
+
+**Social Sciences**
+- **Geschichte**: Antike, Mittelalter, Renaissance, Reformation, Französische Revolution, Nationalsozialismus, Holocaust, DDR, Wiedervereinigung, Europäische Integration
+- **Politik/Wirtschaft**: politisches System Deutschlands, EU, Wirtschaftspolitik, Globalisierung
+- **Erdkunde**: Klimawandel, Bevölkerung, Ressourcen, Raumanalyse
+- **Philosophie/Ethik**: Kant (kategorischer Imperativ), Utilitarismus (Bentham, Mill), Aristoteles, Arendt, Menschenrechte, Bioethik
+
+---
+
+## 🇪🇸 Spain — Bachillerato / EBAU (Selectividad)
+
+**2º de Bachillerato (último año) — EBAU al final**
+
+### Troncales generales
+1. **Lengua Castellana y Literatura**: comentario de texto, sintaxis, morfología, literatura española e hispanoamericana (Edad Media, Renacimiento, Barroco, Ilustración, Romanticismo, Realismo, Generación del 98, Modernismo, Vanguardias, Generación del 27, posguerra, literatura contemporánea)
+2. **Historia de España**: Prehistoria, Hispania romana, Al-Ándalus, Reyes Católicos, Austrias, Borbones, siglo XIX (Guerra de Independencia, liberalismo, Restauración), siglo XX (II República, Guerra Civil, Franquismo, Transición, democracia)
+3. **Idioma extranjero** (Inglés): reading, writing, listening, grammar, speaking
+
+### Modalidades (choose one)
+- **Ciencias**: Matemáticas II (análisis, álgebra lineal, geometría, probabilidad), Física (mecánica, electromagnetismo, ondas, óptica, física cuántica), Química (enlace, termoquímica, ácido-base, redox, orgánica), Biología, Dibujo Técnico
+- **Humanidades y Ciencias Sociales**: Latín II, Griego II, Matemáticas Aplicadas a las CCSS (funciones, derivadas, probabilidad, inferencia estadística), Economía de la Empresa, Geografía, Historia del Arte
+- **Artes**: Fundamentos del Arte, Diseño, Cultura Audiovisual
+
+### Exam (EBAU)
+- Fase general: Lengua, Historia, Idioma + 1 modalidad
+- Fase específica: hasta 4 optativas para subir nota (máximo 14/14)
+
+---
+
+## Altre nazioni (schede rapide)
+
+| Paese | Esame | Materie principali |
+|-------|-------|--------------------|
+| **🇦🇹 Austria** | Matura / Reifeprüfung | Deutsch, Mathematik, Fremdsprache + Schwerpunktfach |
+| **🇨🇭 Svizzera** | Maturité / Maturità | Francese/Tedesco/Italiano, Matematica, Science umane/sperimentali |
+| **🇳🇱 Paesi Bassi** | Eindexamen (VWO) | Nederlands, Engels, Wiskunde + profielkeuze |
+| **🇸🇪 Svezia** | Gymnasieexamen / Högskoleprov | Svenska, Engelska, Matematik + program |
+| **🇧🇷 Brasile** | ENEM / Vestibular | Português, Matemática, Ciências Humanas, Ciências da Natureza, Redação |
+| **🇦🇷 Argentina** | Bachillerato | Lengua y Literatura, Matemática, Historia, Geografía, Física/Química, Idioma |
+| **🇯🇵 Giappone** | 大学入学共通テスト (Center Test) | 国語, 数学, 英語, 理科, 地歴公民 |
+| **🇰🇷 Corea** | 수능 (Suneung) | 국어, 수학, 영어, 한국사, 탐구 (사회/과학) |
+| **🇮🇳 India** | CBSE Class 12 / JEE / NEET | English, Mathematics/Physics/Chemistry/Biology, Economics, History |
+| **🇨🇳 Cina** | 高考 (Gaokao) | 语文, 数学, 外语 + 文综/理综 |
+| **🇧🇷 Brasile** | ENEM | Redação, Ciências Humanas, Ciências da Natureza, Matemática, Linguagens |
+
+---
+
+## Come contribuire
+
+Vedi [CONTRIBUTING.md](../../../CONTRIBUTING.md) per aggiungere un nuovo paese.
+Template da compilare: nome esame, materie obbligatorie, programma standard per materia, struttura esame.

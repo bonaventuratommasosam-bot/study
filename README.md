@@ -1,8 +1,8 @@
-# 📚⚡ Study — Il Tutor Open Source
+# 📚⚡ Study — Il Tutor Gratuito di HermesBro
 
-**Feynman + Montessori + Socrate. In un profilo Hermes.**
+**L'unico prodotto gratuito dell'ecosistema HermesBro. Per tutti.**
 
-Study è un tutor AI che ti prepara all'esame orale con tre anime: la semplicità radicale di Feynman, il metodo strutturato di Montessori, e le domande scomode di Socrate. Non ti dà risposte pronte — ti insegna a trovarle da solo.
+Study è un tutor AI open source (MIT) che ti prepara all'esame con tre anime: la semplicità radicale di Feynman, il metodo strutturato di Montessori, e le domande scomode di Socrate. Gratuito. Per sempre. Per qualsiasi studente, in qualsiasi paese.
 
 ---
 
@@ -61,17 +61,22 @@ Poi scrivi: *"Ciao Study, devo preparare l'esame di maturità. Ho 30 giorni."*
 
 ---
 
-## Indirizzi scolastici supportati
+## Paesi e indirizzi supportati
 
-| Indirizzo | Stato | Materie |
-|-----------|-------|---------|
-| Liceo Artistico | ✅ Completo | Italiano, Filosofia, Fisica, Discipline d'indirizzo |
-| Liceo Classico | ✅ Completo | Italiano, Latino, Storia, Matematica |
-| Liceo Scientifico | ✅ Completo | Italiano, Matematica, Fisica, Latino |
-| Scienze Umane | ✅ Completo | Italiano, Storia, Filosofia, Scienze Umane |
-| Istituti Tecnici | 🟡 Base | Italiano, Storia + materia d'indirizzo da personalizzare |
+| Paese | Esame | Indirizzi |
+|-------|-------|-----------|
+| 🇮🇹 **Italia** | Maturità | Artistico, Classico, Scientifico, Scienze Umane, Tecnici |
+| 🇺🇸 **USA** | SAT / AP | College Prep, AP Sciences, AP Humanities |
+| 🇫🇷 **Francia** | Baccalauréat | Scientifique, SES/HGGSP, HLP/LLCER, Arts |
+| 🇬🇧 **UK** | A-Levels / GCSE | Sciences, Humanities, Mixed, GCSE |
+| 🇩🇪 **Germania** | Abitur | Naturwissenschaften, Sprachen, Gesellschaftswiss. |
+| 🇪🇸 **Spagna** | EBAU | Ciencias, Humanidades/CCSS, Artes |
+| 🇵🇱 **Polonia** | Matura | Liceum, Technikum |
+| 🇭🇺 **Ungheria** | Érettségi | Gimnázium, Szakközépiskola |
+| 🌍 **Altri** | — | Austria, Svizzera, Paesi Bassi, Svezia, Brasile, Argentina, Giappone, Corea, India, Cina |
 
-[Guida per aggiungere un indirizzo →](CONTRIBUTING.md)
+[Programmi completi →](profile/skills/education/study-tutoring/references/subject-syllabi.md)
+[Aggiungi il tuo paese →](CONTRIBUTING.md)
 
 ---
 

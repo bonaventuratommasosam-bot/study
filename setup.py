@@ -2,7 +2,7 @@
 """
 Study Open Source — Setup Script (Python)
 Crea un profilo Hermes "Study" — funziona su Windows, Mac, Linux.
-Docs: https://github.com/hermesbro/study
+Docs: https://github.com/bonaventuratommasosam-bot/study
 """
 import os
 import sys
@@ -10,20 +10,18 @@ import shutil
 import subprocess
 from pathlib import Path
 
-# ── Config ──────────────────────────────────────────────────
 TEMPLATE_DIR = Path(__file__).resolve().parent / "profile"
 PROFILE_DIR = Path.home() / ".hermes" / "profiles" / "study"
 
-# ── Banner ──────────────────────────────────────────────────
 def banner():
     print("""
   ╔══════════════════════════════════════════╗
-  ║  📚⚡ Study — Il Tutor Open Source      ║
+  ║  📚⚡ Study — Il Tutor Gratuito         ║
   ║  Feynman + Montessori + Socrate          ║
+  ║  L'unico prodotto free di HermesBro      ║
   ╚══════════════════════════════════════════╝
 """)
 
-# ── Prerequisiti ───────────────────────────────────────────
 def check_prereqs():
     print("→ Verifica prerequisiti...")
     try:
@@ -35,7 +33,6 @@ def check_prereqs():
         sys.exit(1)
     print("✓ Python OK")
 
-# ── Input helper ───────────────────────────────────────────
 def ask(prompt, default=""):
     if default:
         val = input(f"? {prompt} [{default}]: ").strip()
@@ -52,83 +49,256 @@ def ask_api_key():
     print("✓ API key registrata")
     return key
 
-# ── Scelta scuola ──────────────────────────────────────────
-def ask_school_type():
-    print("\nScegli il tipo di scuola:")
-    print("  1) Liceo Artistico")
-    print("  2) Liceo Classico")
-    print("  3) Liceo Scientifico")
-    print("  4) Liceo delle Scienze Umane")
-    print("  5) Istituto Tecnico")
-    print("  6) Altro (specifica)")
+def ask_country_and_school():
+    print("\nScegli il paese:")
+    print("  1) 🇮🇹 Italia")
+    print("  2) 🇺🇸 USA")
+    print("  3) 🇫🇷 Francia")
+    print("  4) 🇬🇧 Regno Unito")
+    print("  5) 🇩🇪 Germania")
+    print("  6) 🇪🇸 Spagna")
+    print("  7) 🇵🇱 Polonia")
+    print("  8) 🇭🇺 Ungheria")
+    print("  9) Altro paese")
 
-    choice = ask("Scelta [1-6]", "1")
+    country = ask("Scelta [1-9]", "1")
 
-    syllabi = {
-        "1": ("Liceo Artistico", "Maturità",
-              "- **Italiano**: letteratura italiana dall'800 al '900, analisi del testo, figure retoriche\n"
-              "- **Storia**: dalla Restaurazione al secondo dopoguerra, nessi causa-effetto\n"
-              "- **Filosofia**: dall'Idealismo tedesco a Bergson, smontaggio argomentazioni\n"
-              "- **Fisica**: meccanica, termodinamica, elettromagnetismo, onde — prima intuizione, poi formule\n"
-              "- **Discipline d'indirizzo**: plastiche, pittoriche, grafiche o audiovisive"),
+    # ITALIA
+    if country == "1":
+        print("\nScegli il tipo di scuola:")
+        print("  1) Liceo Artistico")
+        print("  2) Liceo Classico")
+        print("  3) Liceo Scientifico")
+        print("  4) Liceo Scienze Umane")
+        print("  5) Istituto Tecnico")
+        print("  6) Altro")
+        c = ask("Scelta [1-6]", "1")
+        schools = {
+            "1": ("Liceo Artistico", "Maturità",
+                  "- **Italiano**: letteratura italiana 800-900, analisi del testo, figure retoriche\n"
+                  "- **Storia**: Restaurazione al secondo dopoguerra\n"
+                  "- **Filosofia**: Idealismo tedesco a Bergson\n"
+                  "- **Fisica**: meccanica, termodinamica, elettromagnetismo, onde\n"
+                  "- **Discipline d'indirizzo**: plastiche, pittoriche, grafiche, audiovisive"),
+            "2": ("Liceo Classico", "Maturità",
+                  "- **Italiano**: letteratura italiana 800-900\n"
+                  "- **Latino**: Tacito, Seneca, Virgilio, Orazio, Agostino\n"
+                  "- **Storia**: Restaurazione al secondo dopoguerra\n"
+                  "- **Matematica**: funzioni, limiti, derivate, integrali"),
+            "3": ("Liceo Scientifico", "Maturità",
+                  "- **Italiano**: letteratura italiana 800-900\n"
+                  "- **Matematica**: funzioni, limiti, derivate, integrali, equazioni differenziali\n"
+                  "- **Fisica**: elettrostatica, elettromagnetismo, Maxwell, relatività, quantistica\n"
+                  "- **Latino**: Seneca, Tacito, Virgilio, Orazio"),
+            "4": ("Liceo delle Scienze Umane", "Maturità",
+                  "- **Italiano**: letteratura italiana 800-900\n"
+                  "- **Storia**: Restaurazione al secondo dopoguerra\n"
+                  "- **Filosofia**: Idealismo tedesco a Bergson\n"
+                  "- **Scienze Umane**: pedagogia, psicologia, sociologia, antropologia"),
+            "5": ("Istituto Tecnico", "Maturità",
+                  "- **Italiano**: letteratura italiana 800-900\n"
+                  "- **Storia**: Restaurazione al secondo dopoguerra\n"
+                  "- **Materia d'indirizzo**: [specifica tu]"),
+        }
+        if c in schools:
+            school, exam, subjects = schools[c]
+        else:
+            school = ask("  Tipo di scuola")
+            exam = "Maturità"
+            subjects = "- **Personalizza**: materie d'esame"
+        return "Italia", school, exam, subjects
 
-        "2": ("Liceo Classico", "Maturità",
-              "- **Italiano**: letteratura italiana dall'800 al '900\n"
-              "- **Latino**: Tacito, Seneca, Petronio, Apuleio, Virgilio, Orazio, Agostino\n"
-              "- **Storia**: dalla Restaurazione al secondo dopoguerra\n"
-              "- **Matematica**: funzioni, limiti, derivate, studio di funzione, integrali"),
+    # USA
+    elif country == "2":
+        return ("USA", "High School (12th Grade)", "SAT / AP Exams",
+                "- **English**: literary analysis, argumentative writing, AP Lang/Lit\n"
+                "- **Mathematics**: Pre-Calculus, AP Calculus AB/BC, AP Statistics\n"
+                "- **Science**: Biology, Chemistry, Physics (AP level)\n"
+                "- **Social Studies**: AP US History, AP Government, World History\n"
+                "- **Foreign Language**: Spanish, French (AP level)")
 
-        "3": ("Liceo Scientifico", "Maturità",
-              "- **Italiano**: letteratura italiana dall'800 al '900\n"
-              "- **Matematica**: funzioni, limiti, derivate, studio completo, integrali, equazioni differenziali\n"
-              "- **Fisica**: elettrostatica, corrente, elettromagnetismo, Maxwell, relatività, quantistica\n"
-              "- **Latino**: Seneca, Tacito, Virgilio, Orazio (programma ridotto)"),
+    # FRANCIA
+    elif country == "3":
+        print("\nScegli la spécialité:")
+        print("  1) Scientifique (Maths + PC/SVT)")
+        print("  2) SES + HGGSP")
+        print("  3) HLP + LLCER")
+        print("  4) Arts")
+        print("  5) Altro")
+        c = ask("Scelta [1-5]", "1")
+        options = {
+            "1": ("Bac Général — Voie Scientifique",
+                  "- **Philosophie**: dissertation, explication de texte\n"
+                  "- **Histoire-Géo**: guerres mondiales, décolonisation, mondialisation\n"
+                  "- **Maths**: analyse, probabilités\n"
+                  "- **Physique-Chimie**: ondes, mécanique, chimie organique\n"
+                  "- **SVT**: génétique, évolution, climat\n"
+                  "- **LVA Anglais + LVB**\n- **Grand Oral**"),
+            "2": ("Bac Général — SES / HGGSP",
+                  "- **Philosophie**\n- **Histoire-Géo**\n"
+                  "- **SES**: marchés, croissance, inégalités\n"
+                  "- **HGGSP**: puissances, frontières, environnement\n"
+                  "- **LVA+LVB**\n- **Grand Oral**"),
+            "3": ("Bac Général — HLP / LLCER",
+                  "- **Philosophie**\n- **HLP**: parole, représentations, recherche de soi\n"
+                  "- **LLCER Anglais**: littérature, cinéma, civilisation\n"
+                  "- **Histoire-Géo**\n- **LVA+LVB**\n- **Grand Oral**"),
+            "4": ("Bac Général — Arts",
+                  "- **Philosophie**\n- **Arts plastiques / Musique / Théâtre**\n"
+                  "- **Histoire-Géo**\n- **LVA+LVB**\n- **Grand Oral**"),
+        }
+        if c in options:
+            school, subjects = options[c]
+        else:
+            school = "Bac Général"
+            subjects = "- **Philosophie**, **Histoire-Géo**, **LVA+LVB** + 2 spécialités"
+        return "Francia", school, "Baccalauréat", subjects
 
-        "4": ("Liceo delle Scienze Umane", "Maturità",
-              "- **Italiano**: letteratura italiana dall'800 al '900\n"
-              "- **Storia**: dalla Restaurazione al secondo dopoguerra\n"
-              "- **Filosofia**: dall'Idealismo tedesco a Bergson\n"
-              "- **Scienze Umane**: pedagogia, psicologia, sociologia, antropologia"),
+    # UK
+    elif country == "4":
+        print("\nScegli il percorso:")
+        print("  1) A-Levels — Sciences")
+        print("  2) A-Levels — Humanities")
+        print("  3) A-Levels — Mixed")
+        print("  4) GCSE (Year 11)")
+        print("  5) Altro")
+        c = ask("Scelta [1-5]", "1")
+        options = {
+            "1": ("A-Levels — Sciences", "A-Level Exams",
+                  "- **Mathematics**: Pure, Statistics, Mechanics\n"
+                  "- **Physics**: particles, waves, mechanics, electricity, fields\n"
+                  "- **Chemistry**: atomic structure, bonding, organic, spectroscopy\n"
+                  "- **Further Maths** (optional)"),
+            "2": ("A-Levels — Humanities", "A-Level Exams",
+                  "- **English Literature**: Shakespeare, poetry, prose comparison\n"
+                  "- **History**: breadth + depth study + coursework\n"
+                  "- **Politics**: UK government, US politics, ideologies\n"
+                  "- **Economics** (optional)"),
+            "3": ("A-Levels — Mixed", "A-Level Exams",
+                  "- **Mathematics**: Pure, Statistics, Mechanics\n"
+                  "- **Economics**: micro/macro, international trade\n"
+                  "- **Psychology**: cognitive, social, biological, research methods"),
+            "4": ("GCSE (Year 11)", "GCSE Exams",
+                  "- **English Language & Literature**\n"
+                  "- **Mathematics**: number, algebra, geometry, statistics\n"
+                  "- **Science** (Combined/Triple): biology, chemistry, physics\n"
+                  "- **History / Geography**\n- **MFL**: French, Spanish, German"),
+        }
+        if c in options:
+            school, exam, subjects = options[c]
+        else:
+            school, exam = "A-Levels", "A-Level Exams"
+            subjects = "- 3-4 materie a scelta tra Maths, English, Sciences, Humanities"
+        return "Regno Unito", school, exam, subjects
 
-        "5": ("Istituto Tecnico", "Maturità",
-              "- **Italiano**: letteratura italiana dall'800 al '900\n"
-              "- **Storia**: dalla Restaurazione al secondo dopoguerra\n"
-              "- **Materia d'indirizzo**: [specifica tu — economia, informatica, turismo...]"),
-    }
+    # GERMANIA
+    elif country == "5":
+        print("\nScegli il profilo:")
+        print("  1) Naturwissenschaften (Maths, Physik, Chemie)")
+        print("  2) Sprachen (Deutsch, Englisch, Französisch)")
+        print("  3) Gesellschaftswissenschaften (Geschichte, Politik)")
+        print("  4) Altro")
+        c = ask("Scelta [1-4]", "1")
+        options = {
+            "1": ("Abitur — Naturwissenschaften",
+                  "- **Mathematik**: Analysis, Analytische Geometrie, Stochastik\n"
+                  "- **Physik**: Mechanik, Elektrodynamik, Quantenphysik\n"
+                  "- **Chemie**: organische Chemie, Säure-Base, Redox\n"
+                  "- **Biologie**: Genetik, Evolution, Ökologie\n"
+                  "- **Deutsch, Englisch** (Grundkurse)"),
+            "2": ("Abitur — Sprachen",
+                  "- **Deutsch**: Goethe, Kafka, Brecht, Gedichtanalyse\n"
+                  "- **Englisch**: Shakespeare, contemporary novels, mediation\n"
+                  "- **Französisch / Latein**\n"
+                  "- **Geschichte**: Französische Revolution, NS, DDR, EU\n"
+                  "- **Mathematik** (Grundkurs)"),
+            "3": ("Abitur — Gesellschaftswissenschaften",
+                  "- **Geschichte**: Antike bis Europäische Integration\n"
+                  "- **Politik/Wirtschaft**: DE System, EU, Globalisierung\n"
+                  "- **Erdkunde**: Klimawandel, Bevölkerung\n"
+                  "- **Philosophie/Ethik**: Kant, Utilitarismus, Bioethik\n"
+                  "- **Deutsch, Englisch, Mathematik** (Grundkurse)"),
+        }
+        if c in options:
+            school, subjects = options[c]
+        else:
+            school = "Abitur"
+            subjects = "- 4-5 Abiturfächer: 2-3 Leistungskurse + 2 Grundkurse"
+        return "Germania", school, "Abitur", subjects
 
-    if choice in syllabi:
-        school, exam, subjects = syllabi[choice]
-    elif choice == "6":
-        school = ask("  Tipo di scuola")
-        exam = ask("  Nome esame", "Maturità")
-        subjects = "- **Personalizza**: inserisci qui le tue materie d'esame"
+    # SPAGNA
+    elif country == "6":
+        print("\nScegli la modalidad:")
+        print("  1) Ciencias")
+        print("  2) Humanidades y CCSS")
+        print("  3) Artes")
+        print("  4) Altro")
+        c = ask("Scelta [1-4]", "1")
+        options = {
+            "1": ("Bachillerato — Ciencias",
+                  "- **Lengua Castellana**: comentario, sintaxis, literatura\n"
+                  "- **Historia de España**: Prehistoria a democracia\n"
+                  "- **Inglés**: reading, writing, speaking\n"
+                  "- **Matemáticas II**: análisis, álgebra, geometría, probabilidad\n"
+                  "- **Física**: mecánica, electromagnetismo, ondas, cuántica\n"
+                  "- **Química**: enlace, termoquímica, ácido-base, orgánica"),
+            "2": ("Bachillerato — Humanidades / CCSS",
+                  "- **Lengua Castellana, Historia de España, Inglés**\n"
+                  "- **Matemáticas Aplicadas**: funciones, derivadas, inferencia\n"
+                  "- **Economía de la Empresa**\n- **Geografía**"),
+            "3": ("Bachillerato — Artes",
+                  "- **Lengua, Historia, Inglés** (troncales)\n"
+                  "- **Fundamentos del Arte**\n- **Diseño**\n- **Cultura Audiovisual**"),
+        }
+        if c in options:
+            school, subjects = options[c]
+        else:
+            school = "Bachillerato"
+            subjects = "- Lengua, Historia, Idioma + modalidad"
+        return "Spagna", school, "EBAU / Selectividad", subjects
+
+    # POLONIA
+    elif country == "7":
+        return ("Polonia", "Liceum / Technikum", "Matura",
+                "- **Język polski**: analiza tekstów, rozprawka (Mickiewicz, Szymborska, Miłosz)\n"
+                "- **Matematyka**: funkcje, ciągi, geometria, prawdopodobieństwo\n"
+                "- **Język angielski**: rozumienie, gramatyka, wypracowanie\n"
+                "- **Przedmiot dodatkowy** (rozszerzony): biologia, chemia, fizyka, geografia...")
+
+    # UNGHERIA
+    elif country == "8":
+        return ("Ungheria", "Gimnázium / Szakközépiskola", "Érettségi",
+                "- **Magyar nyelv és irodalom**: szövegértés, műelemzés\n"
+                "- **Matematika**: halmazok, algebra, függvények, trigonometria\n"
+                "- **Történelem**: ókortól a rendszerváltásig\n"
+                "- **Angol nyelv**: olvasás, hallás, írás, szóbeli\n"
+                "- **Választható tárgy** (emeltszint)")
+
+    # ALTRO
     else:
-        school, exam, subjects = "Altro", "Esame", "- **Personalizza**: materie d'esame"
+        c = ask("  Specifica il paese")
+        exam = ask("  Nome esame (es. ENEM, Gaokao)", "Esame")
+        school = ask("  Tipo di scuola", "Scuola Secondaria")
+        subjects = f"- **Personalizza**: materie d'esame per {c}"
+        return c, school, exam, subjects
 
-    print(f"✓ Scuola: {school} | Esame: {exam}")
-    return school, exam, subjects
-
-# ── Scelta canale ──────────────────────────────────────────
 def ask_channel():
     print("\nScegli il canale:")
-    print("  1) CLI / Web (terminale Hermes — nessuna configurazione extra)")
-    print("  2) Telegram (bot — devi creare un bot con @BotFather)")
+    print("  1) CLI / Web (terminale Hermes)")
+    print("  2) Telegram (bot — @BotFather)")
     print("  3) Entrambi")
-
     choice = ask("Scelta [1-3]", "1")
-
     if choice == "1":
         return "cli", "", "CLI", None, None
     elif choice == "2":
-        token = ask("  Token del bot Telegram (da @BotFather)")
-        chat_id = ask("  Chat ID autorizzata (es. 123456789)")
+        token = ask("  Token del bot Telegram")
+        chat_id = ask("  Chat ID autorizzata")
         return "telegram", "  telegram:\n  - hermes-telegram", "Telegram", token, chat_id
     else:
-        token = ask("  Token del bot Telegram (da @BotFather)")
-        chat_id = ask("  Chat ID autorizzata (es. 123456789)")
+        token = ask("  Token del bot Telegram")
+        chat_id = ask("  Chat ID autorizzata")
         return "both", "  telegram:\n  - hermes-telegram", "Telegram", token, chat_id
 
-# ── Generazione profilo ────────────────────────────────────
 def replace_vars(content, **kwargs):
     for key, val in kwargs.items():
         content = content.replace("{{" + key + "}}", val)
@@ -136,21 +306,15 @@ def replace_vars(content, **kwargs):
 
 def generate_profile(vars):
     print("\n→ Creazione profilo Study...")
-
-    # Crea profilo Hermes
-    subprocess.run(["hermes", "profile", "create", "study"],
-                   capture_output=True)
-
+    subprocess.run(["hermes", "profile", "create", "study"], capture_output=True)
     PROFILE_DIR.mkdir(parents=True, exist_ok=True)
     skills_dir = PROFILE_DIR / "skills" / "education" / "study-tutoring" / "references"
     skills_dir.mkdir(parents=True, exist_ok=True)
 
-    # SOUL.md
     soul = (TEMPLATE_DIR / "SOUL.md").read_text(encoding="utf-8")
     soul = replace_vars(soul, **vars)
     (PROFILE_DIR / "SOUL.md").write_text(soul, encoding="utf-8")
 
-    # GOAL.md
     goal = (TEMPLATE_DIR / "GOAL.md").read_text(encoding="utf-8")
     telegram_section = ""
     if vars.get("TELEGRAM_TOOLSET"):
@@ -160,18 +324,15 @@ def generate_profile(vars):
     goal = replace_vars(goal, **{k: v for k, v in vars.items() if k != "TELEGRAM_SECTION"})
     (PROFILE_DIR / "GOAL.md").write_text(goal, encoding="utf-8")
 
-    # Config
     config = (TEMPLATE_DIR / "config.template.yaml").read_text(encoding="utf-8")
     config = replace_vars(config, **vars)
     (PROFILE_DIR / "config.yaml").write_text(config, encoding="utf-8")
 
-    # Skill + references
     shutil.copy(TEMPLATE_DIR / "skills" / "education" / "study-tutoring" / "SKILL.md",
                 PROFILE_DIR / "skills" / "education" / "study-tutoring" / "SKILL.md")
     for ref_file in (TEMPLATE_DIR / "skills" / "education" / "study-tutoring" / "references").glob("*.md"):
         shutil.copy(ref_file, skills_dir / ref_file.name)
 
-    # Telegram .env
     if vars.get("TELEGRAM_BOT_TOKEN"):
         env_path = PROFILE_DIR / ".env"
         with open(env_path, "a", encoding="utf-8") as f:
@@ -181,20 +342,19 @@ def generate_profile(vars):
 
     print(f"✓ Profilo creato in: {PROFILE_DIR}")
 
-# ── Main ────────────────────────────────────────────────────
 def main():
     banner()
     check_prereqs()
-
     print("\n→ Configuriamo Study per te. 6 domande e sei pronto.\n")
 
     student_name = ask("Come ti chiami?", "Studente")
-    school_type, exam_name, subjects = ask_school_type()
+    country, school_type, exam_name, subjects = ask_country_and_school()
     channel, telegram_toolset, notify_channel, bot_token, chat_id = ask_channel()
     api_key = ask_api_key()
 
     print(f"\n→ Riepilogo:")
     print(f"  Nome:      {student_name}")
+    print(f"  Paese:     {country}")
     print(f"  Scuola:    {school_type}")
     print(f"  Esame:     {exam_name}")
     print(f"  Canale:    {channel}")
@@ -202,7 +362,7 @@ def main():
 
     confirm = ask("Procedo? [S/n]", "S")
     if confirm.lower() == "n":
-        print("→ Setup annullato. Riesegui quando vuoi.")
+        print("→ Setup annullato.")
         return
 
     generate_profile({
