@@ -39,15 +39,40 @@ def ask(prompt, default=""):
         return val if val else default
     return input(f"? {prompt}: ").strip()
 
-def ask_api_key():
-    print("\n→ Serve una API key LLM. Study funziona con DeepSeek (~3-5€/mese).")
-    print("  Ottieni la key: https://platform.deepseek.com/api_keys")
-    key = ask("DeepSeek API key")
-    if not key:
-        print("✗ API key obbligatoria. Riavvia lo script quando ce l'hai.")
-        sys.exit(1)
-    print("✓ API key registrata")
-    return key
+def ask_llm():
+    print("\nScegli il provider LLM:")
+    print("  1) 🆓  Groq — GRATUITO (Llama 3.3 70B, nessun costo, key gratis)")
+    print("  2) 💰  DeepSeek — economico (~3-5€/mese, miglior rapporto qualità/prezzo)")
+    print("  3) 🔧  Custom — scegli tu provider e modello")
+    choice = ask("Scelta [1-3]", "2")
+
+    if choice == "1":
+        print("  Ottieni la API key gratuita: https://console.groq.com/keys")
+        key = ask("Groq API key")
+        if not key:
+            print("✗ API key obbligatoria.")
+            sys.exit(1)
+        print("✓ Groq (FREE) — Llama 3.3 70B")
+        return {"api_key": key, "base_url": "https://api.groq.com/openai/v1",
+                "model": "llama-3.3-70b-versatile", "label": "Groq (FREE)"}
+    elif choice == "2":
+        print("  Ottieni la API key: https://platform.deepseek.com/api_keys")
+        key = ask("DeepSeek API key")
+        if not key:
+            print("✗ API key obbligatoria.")
+            sys.exit(1)
+        print("✓ DeepSeek (€3-5/mese)")
+        return {"api_key": key, "base_url": "https://api.deepseek.com/v1",
+                "model": "deepseek-chat", "label": "DeepSeek"}
+    else:
+        base_url = ask("  Base URL", "https://api.openai.com/v1")
+        model = ask("  Modello", "gpt-4o")
+        key = ask("  API key")
+        if not key:
+            print("✗ API key obbligatoria.")
+            sys.exit(1)
+        print(f"✓ Custom — {model}")
+        return {"api_key": key, "base_url": base_url, "model": model, "label": f"Custom ({model})"}
 
 def ask_country_and_school():
     print("\nScegli il paese:")
@@ -350,7 +375,7 @@ def main():
     student_name = ask("Come ti chiami?", "Studente")
     country, school_type, exam_name, subjects = ask_country_and_school()
     channel, telegram_toolset, notify_channel, bot_token, chat_id = ask_channel()
-    api_key = ask_api_key()
+    llm = ask_llm()
 
     print(f"\n→ Riepilogo:")
     print(f"  Nome:      {student_name}")
@@ -358,6 +383,7 @@ def main():
     print(f"  Scuola:    {school_type}")
     print(f"  Esame:     {exam_name}")
     print(f"  Canale:    {channel}")
+    print(f"  LLM:       {llm['label']}")
     print()
 
     confirm = ask("Procedo? [S/n]", "S")
@@ -375,7 +401,9 @@ def main():
         "NOTIFY_CHANNEL": notify_channel,
         "TELEGRAM_TOOLSET": telegram_toolset,
         "TELEGRAM_ALLOWED_CHATS": chat_id or "",
-        "DEEPSEEK_API_KEY": api_key,
+        "LLM_API_KEY": llm["api_key"],
+        "LLM_BASE_URL": llm["base_url"],
+        "LLM_MODEL": llm["model"],
         "TELEGRAM_BOT_TOKEN": bot_token or "",
     })
 

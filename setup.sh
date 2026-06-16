@@ -426,17 +426,53 @@ ask_channel() {
     ok "Canale: ${CHANNEL}"
 }
 
-ask_api_key() {
+ask_llm() {
     echo ""
-    info "Serve una API key LLM. Study funziona con DeepSeek (economico, ~3-5€/mese)."
-    echo "  Ottieni la key: https://platform.deepseek.com/api_keys"
-    read -r -s -p "$(echo -e "${BLUE}?${NC} DeepSeek API key (input nascosto): ")" DEEPSEEK_API_KEY
-    echo ""
-    if [ -z "$DEEPSEEK_API_KEY" ]; then
+    echo -e "${BOLD}Scegli il provider LLM:${NC}"
+    echo "  1) 🆓  Groq — GRATUITO (Llama 3.3 70B, nessun costo, key gratis)"
+    echo "  2) 💰  DeepSeek — economico (~3-5€/mese, miglior rapporto qualità/prezzo)"
+    echo "  3) 🔧  Custom — scegli tu provider e modello"
+    read -r -p "$(echo -e "${BLUE}?${NC} Scelta [1-3]: ")" choice
+
+    case "$choice" in
+        1) LLM_PROVIDER="custom"
+           LLM_BASE_URL="https://api.groq.com/openai/v1"
+           LLM_MODEL="llama-3.3-70b-versatile"
+           LLM_LABEL="Groq (FREE)"
+           echo "  Ottieni la API key gratuita: https://console.groq.com/keys"
+           read -r -s -p "$(echo -e "${BLUE}?${NC} Groq API key (input nascosto): ")" LLM_API_KEY
+           echo ""
+           ;;
+        2) LLM_PROVIDER="custom"
+           LLM_BASE_URL="https://api.deepseek.com/v1"
+           LLM_MODEL="deepseek-chat"
+           LLM_LABEL="DeepSeek (€3-5/mese)"
+           echo "  Ottieni la API key: https://platform.deepseek.com/api_keys"
+           read -r -s -p "$(echo -e "${BLUE}?${NC} DeepSeek API key (input nascosto): ")" LLM_API_KEY
+           echo ""
+           ;;
+        3) LLM_PROVIDER="custom"
+           read -r -p "  Base URL (es. https://api.openai.com/v1): " LLM_BASE_URL
+           read -r -p "  Modello (es. gpt-4o, claude-sonnet-4): " LLM_MODEL
+           LLM_LABEL="Custom (${LLM_MODEL})"
+           read -r -s -p "$(echo -e "${BLUE}?${NC} API key (input nascosto): ")" LLM_API_KEY
+           echo ""
+           ;;
+        *) warn "Scelta non valida, uso DeepSeek"
+           LLM_PROVIDER="custom"
+           LLM_BASE_URL="https://api.deepseek.com/v1"
+           LLM_MODEL="deepseek-chat"
+           LLM_LABEL="DeepSeek"
+           read -r -s -p "$(echo -e "${BLUE}?${NC} DeepSeek API key (input nascosto): ")" LLM_API_KEY
+           echo ""
+           ;;
+    esac
+
+    if [ -z "$LLM_API_KEY" ]; then
         err "API key obbligatoria. Riavvia lo script quando ce l'hai."
         exit 1
     fi
-    ok "API key registrata"
+    ok "LLM: ${LLM_LABEL}"
 }
 
 # ── Generazione profilo ────────────────────────────────────
@@ -484,7 +520,9 @@ generate_profile() {
 
     # Config
     replace_vars "$TEMPLATE_DIR/config.template.yaml" "$PROFILE_DIR/config.yaml"
-    sed -i "s|{{DEEPSEEK_API_KEY}}|${DEEPSEEK_API_KEY}|" "$PROFILE_DIR/config.yaml"
+    sed -i "s|{{LLM_API_KEY}}|${LLM_API_KEY}|" "$PROFILE_DIR/config.yaml"
+    sed -i "s|{{LLM_BASE_URL}}|${LLM_BASE_URL}|" "$PROFILE_DIR/config.yaml"
+    sed -i "s|{{LLM_MODEL}}|${LLM_MODEL}|" "$PROFILE_DIR/config.yaml"
     sed -i "s|{{TELEGRAM_TOOLSET}}|${TELEGRAM_TOOLSET}|" "$PROFILE_DIR/config.yaml"
     sed -i "s|{{TELEGRAM_ALLOWED_CHATS}}|${TELEGRAM_ALLOWED_CHATS:-}|" "$PROFILE_DIR/config.yaml"
 
@@ -524,7 +562,7 @@ main() {
     CONNECTION_EXAMPLE="Leopardi"
     OUT_OF_SCOPE_EXAMPLES="trading, cucina, programmazione"
 
-    ask_api_key
+    ask_llm
 
     echo ""
     info "Riepilogo:"
