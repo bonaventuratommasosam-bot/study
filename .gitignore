@@ -1,0 +1,35 @@
+# .gitignore — Study Open Source
+# Non committare mai dati sensibili!
+
+# API key e segreti
+.env
+*.env
+config.yaml  # (il template è config.template.yaml)
+
+# Dati personali
+memories/
+USER.md
+
+# Sessioni e stato
+sessions/
+state.db*
+*.lock
+*.pid
+
+# Cache
+cache/
+image_cache/
+audio_cache/
+output/
+
+# Log
+logs/
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+.idea/
+.vscode/
