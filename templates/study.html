@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study — HermesBro's Free AI Tutor</title>
+<meta name="description" content="Study is the only free product in the HermesBro ecosystem. Open-source AI tutor powered by Feynman, Montessori, and Socrates. For any student, in any country.">
+<meta property="og:image" content="https://hermesbro.cloud/assets/study-pfp.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,sans-serif;background:#0a0a0f;color:#fff;line-height:1.6;min-height:100vh}
+:root{--gold:#d4a853;--muted:#71717a;--graphite:#111113;--border:rgba(255,255,255,0.06)}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+/* ── Icons ── */
+.icon{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.icon svg{width:100%;height:100%}
+.icon-sm{width:20px;height:20px}
+.icon-md{width:28px;height:28px}
+.icon-lg{width:36px;height:36px}
+.icon-gold svg{stroke:var(--gold);fill:none}
+.icon-gold{color:var(--gold)}
+.icon-white svg{stroke:rgba(255,255,255,0.7);fill:none}
+.icon-filled-gold svg{fill:var(--gold);stroke:none}
+
+header{padding:20px 32px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
+header .brand{font-family:'Orbitron',sans-serif;font-size:18px;font-weight:800;text-decoration:none;color:#fff}
+header .brand .bro{color:var(--gold)}
+header nav{display:flex;gap:20px}
+header nav a{color:var(--muted);font-size:13px;text-decoration:none;transition:color .2s}
+header nav a:hover{color:var(--gold)}
+
+.hero{text-align:center;padding:80px 24px 60px;max-width:800px;margin:0 auto}
+.hero .pfp{width:120px;height:120px;border-radius:24px;border:2px solid rgba(212,168,83,0.3);margin-bottom:24px;image-rendering:pixelated}
+.hero .label{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.15em;margin-bottom:16px}
+.hero h1{font-family:'Orbitron',sans-serif;font-size:clamp(32px,6vw,56px);font-weight:900;letter-spacing:-.02em;margin-bottom:16px;line-height:1.1}
+.hero h1 .free{background:linear-gradient(135deg,var(--gold),#f0c96d);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:var(--muted);font-size:18px;max-width:600px;margin:0 auto 32px;line-height:1.7}
+.hero .cta-group{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:12px;font-size:15px;font-weight:700;text-decoration:none;transition:all .25s}
+.btn-gold{background:var(--gold);color:#0a0a0f}
+.btn-gold:hover{background:#b8922e;transform:translateY(-2px)}
+.btn-outline{border:1px solid rgba(255,255,255,0.15);color:#fff}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+
+.container{max-width:900px;margin:0 auto;padding:0 24px 80px}
+.section{margin-bottom:80px}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold);text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px}
+.section h2{font-family:'Orbitron',sans-serif;font-size:24px;font-weight:800;margin-bottom:24px}
+.section h2 .gold{color:var(--gold)}
+
+/* ── Souls ── */
+.souls{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.soul-card{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:16px;padding:28px;transition:border-color .3s;position:relative;overflow:hidden}
+.soul-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(212,168,83,0.3),transparent);opacity:0;transition:opacity .3s}
+.soul-card:hover{border-color:rgba(212,168,83,0.2)}
+.soul-card:hover::before{opacity:1}
+.soul-card .soul-icon{margin-bottom:16px}
+.soul-card h3{font-size:17px;font-weight:700;margin-bottom:6px}
+.soul-card .quote{color:var(--muted);font-size:13px;font-style:italic;margin-bottom:12px;line-height:1.5}
+.soul-card p{color:var(--muted);font-size:14px;line-height:1.6}
+
+/* ── Features ── */
+.features{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.feature{background:#0a0a0f;padding:24px;display:flex;gap:16px;align-items:flex-start}
+.feature .feat-icon{flex-shrink:0;margin-top:2px}
+.feature h3{font-size:15px;font-weight:700;margin-bottom:4px}
+.feature p{color:var(--muted);font-size:14px;line-height:1.5}
+
+/* ── Code ── */
+.code-block{background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.8;overflow-x:auto;margin-bottom:16px;white-space:pre-wrap}
+.code-block .c{color:var(--muted)}
+.code-block .cmd{color:var(--gold)}
+.inline-code{background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.08);border-radius:5px;padding:1px 7px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gold)}
+
+/* ── Countries ── */
+.country-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.country-tag{background:#0a0a0f;padding:14px;text-align:center;font-size:13px;transition:background .2s}
+.country-tag:hover{background:rgba(255,255,255,0.03)}
+.country-tag .flag{font-size:22px;display:block;margin-bottom:4px}
+.country-tag .exam{color:var(--muted);font-size:11px;margin-top:2px}
+
+/* ── Pricing ── */
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.price-card{background:#0a0a0f;padding:28px;text-align:center;position:relative}
+.price-card.highlight{background:rgba(212,168,83,0.03)}
+.price-card.highlight::before{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.price-card .amount{font-family:'Orbitron',sans-serif;font-size:28px;font-weight:900;margin:8px 0}
+.price-card .amount.free{color:#10b981}
+.price-card .label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+.price-card .check{display:inline-flex;align-items:center;gap:6px;color:var(--gold);font-size:13px;font-weight:600}
+
+/* ── NFT ── */
+.nft-box{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:16px;padding:32px;display:flex;gap:24px;align-items:center}
+.nft-box .pfp-lg{width:80px;height:80px;border-radius:16px;image-rendering:pixelated;border:1px solid rgba(212,168,83,0.2)}
+.nft-box .info h3{font-size:16px;font-weight:700;margin-bottom:4px}
+.nft-box .info p{color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:8px}
+.nft-box .traits{display:flex;gap:8px;flex-wrap:wrap}
+.trait{font-size:11px;padding:4px 10px;border-radius:6px;background:rgba(212,168,83,0.1);color:var(--gold);font-family:'JetBrains Mono',monospace}
+.nft-link{color:var(--gold);font-size:13px;text-decoration:none;display:inline-block;margin-top:8px;transition:opacity .2s}
+.nft-link:hover{opacity:0.7}
+
+/* ── FAQ ── */
+.faq-item{border-bottom:1px solid var(--border);padding:20px 0}
+.faq-item h3{font-size:15px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.faq-item h3::before{content:'+';color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:14px}
+.faq-item p{color:var(--muted);font-size:14px;padding-left:26px}
+
+/* ── CTA ── */
+.cta-bottom{text-align:center;padding:40px 0}
+.cta-bottom .sub{color:var(--muted);font-size:13px;margin-top:16px}
+
+footer{padding:40px 32px;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:13px}
+footer .divider{width:40px;height:1px;background:var(--gold);margin:16px auto;opacity:0.3}
+footer a{color:var(--gold);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+@media(max-width:768px){
+  .souls,.features,.pricing{grid-template-columns:1fr}
+  .country-grid{grid-template-columns:repeat(2,1fr)}
+  .nft-box{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- SVG Icon Definitions -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ic-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 4a3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 1.2.7 2.2 1.7 2.7C6.3 8.1 4 11 4 14.5 4 18 6.5 21 10 21c1.5 0 2.8-.6 3.7-1.5.9.9 2.2 1.5 3.7 1.5 3.5 0 6-3 6-6.5 0-3.5-2.3-6.4-3.7-7.8 1-.5 1.7-1.5 1.7-2.7a3 3 0 0 0-3-3 3 3 0 0 0-3 3"/>
+    <path d="M9 12c.5.8 1.5 1.5 3 1.5s2.5-.7 3-1.5"/>
+  </symbol>
+  <symbol id="ic-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/>
+  </symbol>
+  <symbol id="ic-question" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+  </symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="12" y1="6" x2="12" y2="10"/><line x1="10" y1="8" x2="14" y2="8"/>
+  </symbol>
+  <symbol id="ic-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="9" y="1" width="6" height="11" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+  </symbol>
+  <symbol id="ic-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><rect x="7" y="14" width="3" height="3" rx=".5"/><rect x="14" y="14" width="3" height="3" rx=".5"/>
+  </symbol>
+  <symbol id="ic-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+  </symbol>
+  <symbol id="ic-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+  </symbol>
+  <symbol id="ic-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+  </symbol>
+  <symbol id="ic-terminal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/>
+  </symbol>
+  <symbol id="ic-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+  </symbol>
+  <symbol id="ic-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+  </symbol>
+  <symbol id="ic-zap" viewBox="0 0 24 24" fill="var(--gold)" stroke="none">
+    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+  </symbol>
+  <symbol id="ic-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>
+  </symbol>
+  <symbol id="ic-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="9" y1="12" x2="11" y2="14"/><line x1="11" y1="14" x2="15" y2="10"/>
+  </symbol>
+  <symbol id="ic-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+  </symbol>
+  <symbol id="ic-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+  </symbol>
+</svg>
+
+<header>
+  <a href="/" class="brand">HERMES<span class="bro">BRO</span></a>
+  <nav>
+    <a href="/register">Register</a>
+    <a href="/warroom">War Room</a>
+    <a href="https://github.com/bonaventuratommasosam-bot/study" target="_blank">GitHub</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <img src="https://hermesbro.cloud/assets/study-pfp.png" alt="Study PFP" class="pfp">
+  <div class="label">Open Source · MIT License</div>
+  <h1>Study — The <span class="free">Free</span> AI Tutor</h1>
+  <p>Feynman + Montessori + Socrates in one AI assistant that preps you for any exam. Free. Forever. For any student, in any country.</p>
+  <div class="cta-group">
+    <a href="https://github.com/bonaventuratommasosam-bot/study" class="btn btn-gold" target="_blank">
+      <span class="icon icon-sm"><svg><use href="#ic-download"/></svg></span>
+      Download on GitHub
+    </a>
+    <a href="#quickstart" class="btn btn-outline">
+      <span class="icon icon-sm"><svg><use href="#ic-zap"/></svg></span>
+      Quick Start
+    </a>
+  </div>
+</section>
+
+<div class="container">
+
+  <!-- The Three Souls -->
+  <div class="section">
+    <div class="section-label">Personality</div>
+    <h2>The <span class="gold">Three Souls</span> of Study</h2>
+    <div class="souls">
+      <div class="soul-card">
+        <div class="soul-icon icon icon-lg icon-gold"><svg><use href="#ic-brain"/></svg></div>
+        <h3>Richard Feynman</h3>
+        <div class="quote">"If you can't explain it to your grandmother, you don't understand it."</div>
+        <p>Every concept starts with a concrete analogy. The formula comes after. Radical simplicity.</p>
+      </div>
+      <div class="soul-card">
+        <div class="soul-icon icon icon-lg icon-gold"><svg><use href="#ic-clipboard"/></svg></div>
+        <h3>Maria Montessori</h3>
+        <div class="quote">"Help me do it myself."</div>
+        <p>Structure, mind maps, micro-goals. Never the answer before you've tried. Method over memorization.</p>
+      </div>
+      <div class="soul-card">
+        <div class="soul-icon icon icon-lg icon-gold"><svg><use href="#ic-question"/></svg></div>
+        <h3>Socrates</h3>
+        <div class="quote">"I know that I know nothing."</div>
+        <p>Relentless questions until you reach the truth yourself. Zero superficial answers.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- What It Does -->
+  <div class="section">
+    <div class="section-label">Capabilities</div>
+    <h2>What Study <span class="gold">Does</span></h2>
+    <div class="features">
+      <div class="feature">
+        <div class="feat-icon icon icon-md icon-gold"><svg><use href="#ic-book"/></svg></div>
+        <div><h3>Explains</h3><p>Any topic — from the Pythagorean theorem to Nietzsche — with everyday analogies that actually stick.</p></div>
+      </div>
+      <div class="feature">
+        <div class="feat-icon icon icon-md icon-gold"><svg><use href="#ic-mic"/></svg></div>
+        <div><h3>Quizzes You</h3><p>Exam simulations with structured feedback on fluency, precision, and cross-disciplinary connections.</p></div>
+      </div>
+      <div class="feature">
+        <div class="feat-icon icon icon-md icon-gold"><svg><use href="#ic-calendar"/></svg></div>
+        <div><h3>Plans</h3><p>Personalized study plans with spaced repetition and 25-minute micro-goals. No more "where do I start."</p></div>
+      </div>
+      <div class="feature">
+        <div class="feat-icon icon icon-md icon-gold"><svg><use href="#ic-link"/></svg></div>
+        <div><h3>Connects</h3><p>Builds cross-disciplinary paths between subjects that seem worlds apart. Exams reward weavers, not listers.</p></div>
+      </div>
+      <div class="feature">
+        <div class="feat-icon icon icon-md icon-gold"><svg><use href="#ic-pen"/></svg></div>
+        <div><h3>Reviews Your Speech</h3><p>Upload your exam speech PDF. Study analyzes, corrects, and rewrites weak sections — in your style.</p></div>
+      </div>
+      <div class="feature">
+        <div class="feat-icon icon icon-md icon-gold"><svg><use href="#ic-globe"/></svg></div>
+        <div><h3>Speaks Your Language</h3><p>Supports 9+ school systems: Italy, USA, France, UK, Germany, Spain, Poland, Hungary, and more.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interfaces -->
+  <div class="section" id="interfaces">
+    <div class="section-label">Interfaces</div>
+    <h2>How You <span class="gold">Interact</span> with Study</h2>
+    <p style="color:var(--muted);margin-bottom:24px;max-width:640px">Whatever your setup, Study meets you there. No special hardware. No cloud lock-in.</p>
+    <div class="features">
+      <div class="feature">
+        <div class="feat-icon icon icon-md icon-gold"><svg><use href="#ic-terminal"/></svg></div>
+        <div><h3>Terminal</h3><p><code class="inline-code">hermes chat</code> — fast, distraction-free. Ideal for focused sessions. Works on any machine, including a Raspberry Pi.</p></div>
+      </div>
+      <div class="feature">
+        <div class="feat-icon icon icon-md icon-gold"><svg><use href="#ic-monitor"/></svg></div>
+        <div><h3>Web Dashboard</h3><p><code class="inline-code">hermes gateway start</code> → open <strong>http://localhost:9119</strong>. Full interface with message history, file upload, markdown rendering — the same experience you'd get from a premium AI tutor app.</p></div>
+      </div>
+      <div class="feature">
+        <div class="feat-icon icon icon-md icon-gold"><svg><use href="#ic-send"/></svg></div>
+        <div><h3>Telegram</h3><p>Study on your phone. Get daily reminders for your study plan, snap a photo of a problem and get an explanation. Your own private tutor bot, powered by your own LLM key.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Start -->
+  <div class="section" id="quickstart">
+    <div class="section-label">Installation</div>
+    <h2>Quick Start <span class="gold">(2 minutes)</span></h2>
+    <p style="color:var(--muted);margin-bottom:20px">You need <strong>Hermes Agent</strong> (free). <strong>No API key needed</strong> — Gemini shared key included. Just install and go.</p>
+    <div class="code-block">
+<span class="c"># Clone the repo</span>
+<span class="cmd">git clone</span> https://github.com/bonaventuratommasosam-bot/study.git
+<span class="cmd">cd</span> study
+
+<span class="c"># Linux / Mac:</span>
+<span class="cmd">bash</span> setup.sh
+
+<span class="c"># Windows:</span>
+<span class="cmd">python</span> setup.py
+
+<span class="c"># Launch Study (terminal)</span>
+<span class="cmd">hermes profile use</span> study
+<span class="cmd">hermes chat</span>
+
+<span class="c"># Or launch the web dashboard</span>
+<span class="cmd">hermes gateway start</span>
+→ Open <strong>http://localhost:9119</strong>
+    </div>
+    <p style="color:var(--muted);font-size:14px">Answer a few questions (name, country, school, LLM provider) and Study is live. Then just type: <em>"Hey Study, I need to prepare for my exam. I have 30 days."</em></p>
+  </div>
+
+  <!-- Countries -->
+  <div class="section">
+    <div class="section-label">Coverage</div>
+    <h2><span class="gold">16+ Countries</span> Supported</h2>
+    <p style="color:var(--muted);margin-bottom:24px">Study adapts to your school system. Choose your country during setup and it auto-configures the right curriculum.</p>
+    <div class="country-grid">
+      <div class="country-tag"><span class="flag">IT</span><span class="exam">Maturità</span></div>
+      <div class="country-tag"><span class="flag">US</span><span class="exam">SAT / AP</span></div>
+      <div class="country-tag"><span class="flag">FR</span><span class="exam">Baccalauréat</span></div>
+      <div class="country-tag"><span class="flag">UK</span><span class="exam">A-Levels / GCSE</span></div>
+      <div class="country-tag"><span class="flag">DE</span><span class="exam">Abitur</span></div>
+      <div class="country-tag"><span class="flag">ES</span><span class="exam">EBAU</span></div>
+      <div class="country-tag"><span class="flag">PL</span><span class="exam">Matura</span></div>
+      <div class="country-tag"><span class="flag">HU</span><span class="exam">Érettségi</span></div>
+      <div class="country-tag"><span class="flag">AT</span><span class="exam">Matura</span></div>
+      <div class="country-tag"><span class="flag">CH</span><span class="exam">Maturité</span></div>
+      <div class="country-tag"><span class="flag">NL</span><span class="exam">Eindexamen</span></div>
+      <div class="country-tag"><span class="flag">BR</span><span class="exam">ENEM</span></div>
+      <div class="country-tag"><span class="flag">JP</span><span class="exam">Center Test</span></div>
+      <div class="country-tag"><span class="flag">KR</span><span class="exam">Suneung</span></div>
+      <div class="country-tag"><span class="flag">IN</span><span class="exam">CBSE / JEE</span></div>
+      <div class="country-tag"><span class="flag">CN</span><span class="exam">Gaokao</span></div>
+    </div>
+  </div>
+
+  <!-- Costs -->
+  <div class="section">
+    <div class="section-label">Pricing</div>
+    <h2>Costs</h2>
+    <div class="pricing">
+      <div class="price-card highlight">
+        <div class="label">Hermes Agent</div>
+        <div class="amount free"><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> $0</span></div>
+        <p style="color:var(--muted);font-size:14px">Open source runtime</p>
+      </div>
+      <div class="price-card highlight">
+        <div class="label">Study Profile</div>
+        <div class="amount free"><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> $0</span></div>
+        <p style="color:var(--muted);font-size:14px">MIT licensed, forever free</p>
+      </div>
+      <div class="price-card">
+        <div class="label">LLM API</div>
+        <div class="amount">$0–5</div>
+        <p style="color:var(--muted);font-size:14px">Gemini free (key included),<br>or bring your own</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LLM Options -->
+  <div class="section">
+    <div class="section-label">Flexibility</div>
+    <h2>Choose <span class="gold">Your LLM</span></h2>
+    <p style="color:var(--muted);margin-bottom:24px">During setup, pick from 7 providers — free, cheap, or premium. Change anytime in config.yaml.</p>
+    <div class="pricing" style="grid-template-columns:repeat(4,1fr)">
+      <div class="price-card highlight">
+        <div class="icon icon-md icon-gold" style="margin:0 auto 12px"><svg><use href="#ic-zap"/></svg></div>
+        <div class="label">Gemini</div>
+        <div class="amount free">Free</div>
+        <p style="color:var(--muted);font-size:12px">Gemini 2.5 Flash<br>Shared key included</p>
+      </div>
+      <div class="price-card">
+        <div class="icon icon-md icon-gold" style="margin:0 auto 12px"><svg><use href="#ic-cpu"/></svg></div>
+        <div class="label">DeepSeek</div>
+        <div class="amount">~$3-5</div>
+        <p style="color:var(--muted);font-size:12px">Best value<br>Pay as you go</p>
+      </div>
+      <div class="price-card">
+        <div class="icon icon-md icon-gold" style="margin:0 auto 12px"><svg><use href="#ic-settings"/></svg></div>
+        <div class="label">OpenAI</div>
+        <div class="amount">Paid</div>
+        <p style="color:var(--muted);font-size:12px">GPT-4o<br>Best quality</p>
+      </div>
+      <div class="price-card">
+        <div class="icon icon-md icon-gold" style="margin:0 auto 12px"><svg><use href="#ic-link"/></svg></div>
+        <div class="label">Anthropic</div>
+        <div class="amount">Paid</div>
+        <p style="color:var(--muted);font-size:12px">Claude Sonnet 4<br>Reasoning</p>
+      </div>
+      <div class="price-card">
+        <div class="icon icon-md icon-gold" style="margin:0 auto 12px"><svg><use href="#ic-globe"/></svg></div>
+        <div class="label">OpenRouter</div>
+        <div class="amount">Varies</div>
+        <p style="color:var(--muted);font-size:12px">Any model<br>One API key</p>
+      </div>
+      <div class="price-card highlight">
+        <div class="icon icon-md icon-gold" style="margin:0 auto 12px"><svg><use href="#ic-cpu"/></svg></div>
+        <div class="label">Ollama</div>
+        <div class="amount free">Local</div>
+        <p style="color:var(--muted);font-size:12px">Runs on your PC<br>No API key</p>
+      </div>
+      <div class="price-card">
+        <div class="icon icon-md icon-gold" style="margin:0 auto 12px"><svg><use href="#ic-settings"/></svg></div>
+        <div class="label">Custom</div>
+        <div class="amount">Any</div>
+        <p style="color:var(--muted);font-size:12px">Your endpoint<br>Your model</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- On-Chain Identity -->
+  <div class="section">
+    <div class="section-label">Digital Identity</div>
+    <h2>On-Chain <span class="gold">Identity</span></h2>
+    <div class="nft-box">
+      <img src="https://hermesbro.cloud/assets/study-pfp.png" alt="Study NFT" class="pfp-lg">
+      <div class="info">
+        <h3>Study #4550 — GRiBBiTS Collection</h3>
+        <p>Study is the first open-source AI agent with a verifiable on-chain identity. A pixel-art frog on Base chain — because a frog observes, adapts, survives. Just like a student.</p>
+        <div class="traits">
+          <span class="trait">Base L2</span>
+          <span class="trait">De-Banking Hat 0.53%</span>
+          <span class="trait">Purple Shades 9%</span>
+          <span class="trait">Grey T-Shirt 1%</span>
+        </div>
+        <a href="https://opensea.io/item/base/0x38b7446dd746a98a101ec0bf1a0717784c4dc69f/4550" target="_blank" class="nft-link">View on OpenSea →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <div class="section-label">Questions</div>
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <h3>Do I need to know how to code?</h3>
+      <p>No. The setup script does everything. If you can use a terminal, you can install Study.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I use it for any exam?</h3>
+      <p>Yes. Study adapts to your school system. If yours is missing, you can add it — it's open source.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Does it work on Windows?</h3>
+      <p>Yes. Use <code>python setup.py</code>. Works on Windows, Mac, and Linux.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is it really free? What's the catch?</h3>
+      <p>No catch. Study is MIT licensed. It comes with a shared Gemini API key — zero setup, zero cost. For heavier use, you can bring your own key (Gemini, Groq, DeepSeek ~$3-5/month). Study runs locally on your machine — no HermesBro servers involved.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Why is it free when other HermesBro products are paid?</h3>
+      <p>Education is a right. Tommy built Study while preparing for his own exams and decided to give it to the world. Other HermesBro products are professional tools for businesses.</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-bottom">
+    <a href="https://github.com/bonaventuratommasosam-bot/study" class="btn btn-gold" target="_blank" style="font-size:17px;padding:18px 48px">
+      <span class="icon icon-sm"><svg><use href="#ic-download"/></svg></span>
+      Download Study on GitHub
+    </a>
+    <p class="sub">MIT Licensed · Open Source · Forever Free</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>Study is part of <a href="/">HermesBro</a> — the AI agent ecosystem for professionals.</p>
+  <div class="divider"></div>
+  <p><a href="https://github.com/bonaventuratommasosam-bot/study" target="_blank">GitHub</a> · <a href="https://opensea.io/item/base/0x38b7446dd746a98a101ec0bf1a0717784c4dc69f/4550" target="_blank">OpenSea</a> · <a href="/privacy">Privacy</a></p>
+</footer>
+
+</body>
+</html>

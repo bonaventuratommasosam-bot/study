@@ -1,0 +1,14 @@
+name: hermesbro-study
+version: 1.0.0
+description: "AI tutor open source — Feynman + Montessori + Socrate. Per studenti di ogni livello."
+hermes_requires: ">=0.16.0"
+author: "HermesBro"
+license: "MIT"
+
+env_requires:
+  - name: TELEGRAM_BOT_TOKEN
+    description: "Telegram bot token (da @BotFather)"
+    required: true
+  - name: DEEPSEEK_API_KEY
+    description: "DeepSeek API key per LLM"
+    required: true
